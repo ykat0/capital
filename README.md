@@ -4,7 +4,7 @@
 
 Last updated: 2019-11-15
 
-we present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be globally compared without any knowledge of paths to be compared.
+We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be globally compared without any knowledge of paths to be compared.
 
 Coming soon.
 
