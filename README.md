@@ -9,7 +9,7 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 ## Requirements
 * Python 3
 
-## Required modules
+### Required modules
 * matplotlib
 * networkx
 * numpy
