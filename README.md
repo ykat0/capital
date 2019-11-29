@@ -6,10 +6,10 @@ Last updated: 2019-11-29
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
-### Requirements
+## Requirements
 * Python 3
 
-### Required modules
+## Required modules
 * matplotlib
 * networkx
 * numpy
