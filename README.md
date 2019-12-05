@@ -29,7 +29,7 @@ Then, activate the environment:
 $ source activate capital
 ```
 
-1. Install [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) with Miniconda (Anaconda):
+1. Install [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) with conda:
 ```
 $ conda install scanpy
 ```
