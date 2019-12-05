@@ -33,7 +33,7 @@ $ source activate capital
 ```
 $ conda install -c bioconda scanpy
 ```
-This will install almost all of the required modules other than "tslearn," so you will have to install it manually by:
+This command will install almost all of the required modules other than "tslearn," so you will have to install it manually by:
 ```
 $ conda instal tslearn
 ```
