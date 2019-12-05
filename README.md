@@ -31,7 +31,7 @@ $ source activate capital
 
 1. Install [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) with conda:
 ```
-$ conda install scanpy
+$ conda install -c bioconda scanpy
 ```
 This will install almost all of the required modules other than "tslearn," so you will have to install it manually by:
 ```
