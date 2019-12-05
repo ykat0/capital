@@ -20,7 +20,7 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 * tslearn
 
 ## Installation
-1. Create a new environment for CAPITAL if you want to keep your own Python environment built with conda:
+0. Create a new environment for CAPITAL if you want to keep your own Python environment built with conda:
 ```
 $ conda create -n capital python=3.7
 ```
@@ -38,7 +38,7 @@ This will install almost all of the required modules other than "tslearn," so yo
 $ conda instal tslearn
 ```
 
-1. Download the tarball, and type the followings in your terminal:
+2. Download the tarball, and type the followings in your terminal:
 ```
 $ tar zxf capital-0.0.2.tar.gz
 $ cd capital-0.0.2
