@@ -35,7 +35,7 @@ $ conda install -c bioconda scanpy
 ```
 This command will install almost all of the required modules other than "tslearn," so you will have to install it manually by:
 ```
-$ conda instal tslearn
+$ conda install tslearn
 ```
 
 2. Download the tarball, and type the followings in your terminal:
