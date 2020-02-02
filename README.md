@@ -58,8 +58,8 @@ $ ./pre_capital.py [option]* <data2>
 #### Usage (pre_capital.py)
 ```
 positional arguments:
-  data <STR>            path to the raw data of scRNA-seq gene expression
-                        profile
+  data <STR>            path to the raw (TXT, CSV or H5AD) data of scRNA-seq
+                        gene expression profile
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -85,9 +85,9 @@ $ ./capital.py [option]* <data1> <data2> <root1> <root2> <genes>
 #### Usage (capital.py)
 ```
 positional arguments:
-  data1 <STR>           path to the preprocessed expression data for
+  data1 <STR>           path to the preprocessed expression H5AD data for
                         experiment 1 generated with pre_capital.py
-  data2 <STR>           path to the preprocessed expression data for
+  data2 <STR>           path to the preprocessed expression H5AD data for
                         experiment 2 generated with pre_capital.py
   root1 <STR>           root cluster in data1
   root2 <STR>           root cluster in data2
@@ -104,7 +104,7 @@ optional arguments:
                         [off]
 ```
 
-### Step 3: run draw_capital.py to show figures on dynamic time warping and expression dynamics for genes specified in Step 2
+### Step 3: run draw_capital.py to show figures on dynamic time warping and/or expression dynamics for a gene in aligned_data created in Step 2
 ```
 $ ./draw_capital.py [option]* <alignment>
 ```
@@ -112,16 +112,16 @@ $ ./draw_capital.py [option]* <alignment>
 #### Usage (draw_capital.py)
 ```
 positional arguments:
-  alignment <STR>       path to the aligned data generated with capital.py
-                        (e.g. ./data1_data2/alignment001)
+  alignment <STR>     path to the aligned data generated with capital.py (e.g.
+                      ./aligned_data/data1_data2/alignment001)
 
 optional arguments:
-  -h, --help            show this help message and exit
-  --data1-name <STR>    data1 name on the plot
-  --data2-name <STR>    data2 name on the plot
-  --save-dtw <STR>      path to the figure file on dynamic time warping
-  --save-dynamics <STR>
-                        path to the figure file on expression dynamics
+  -h, --help          show this help message and exit
+  --data1-name <STR>  data1 name on the plot
+  --data2-name <STR>  data2 name on the plot
+  --save-dtw <STR>    path to the (e.g. PDF) figure on dynamic time warping
+  --save-dyn <STR>    path to the (e.g. PDF) figure on gene expression
+                      dynamics
 ```
 
 ## Reference
