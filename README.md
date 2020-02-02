@@ -2,16 +2,19 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2019-12-05
+Last updated: 2020-02-02
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
-## Requirements
-* Python >= 3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
+## Installation
+* CAPITAL (ver. 0.1.3) (**capital-0.1.3.tar.gz**) in Python
 
-### Required modules
+### Requirements
+* Python >= 3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
+  
+* leidenalg
 * matplotlib
-* networkx
+* networkx>=2.4
 * numpy
 * pandas
 * scanpy
@@ -19,7 +22,7 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 * scipy
 * tslearn
 
-## Installation
+### Install on Linux, Windows (WSL) and macOS
 0. Create a new environment for CAPITAL if you want to keep your own Python environment built with conda:
 ```
 $ conda create -n capital python=3.7
@@ -33,22 +36,16 @@ $ source activate capital
 ```
 $ conda install -c bioconda scanpy
 ```
-This command will install almost all of the required modules other than "tslearn," so you will have to install it manually by:
+This command will install almost all of the required modules other than "leidenalg" and "tslearn," so you will have to install them manually by:
 ```
-$ conda install tslearn
+$ conda install leidenalg tslearn
 ```
 
 2. Download the tarball, and type the followings in your terminal:
 ```
-$ tar zxf capital-0.0.2.tar.gz
-$ cd capital-0.0.2
-$ ./capital.py
+$ tar zxf capital-0.1.3.tar.gz
+$ cd capital-0.1.3
 ```
-
-**Note:**
-The current version 0.0.2 of CAPITAL is only for test use.
-For instance, command-line argument parsing has not yet implemented with this version.
-More stable and user-friendly version 1.0.0 will be available soon.
 
 ## Reference
 Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
@@ -56,5 +53,5 @@ Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
 Preprint *bioRxiv* at [https://doi.org/10.1101/859751](https://doi.org/10.1101/859751), 2019.
 
 ---
-If you have any questions, please contact [Yuki Kato](http://www.med.osaka-u.ac.jp/pub/rna/ykato/)  
+If you have any questions, please contact [Yuki Kato](http://www.med.osaka-u.ac.jp/pub/rna/ykato/en/)  
 *Graduate School of Medicine, Osaka University, Japan*
