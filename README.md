@@ -45,19 +45,18 @@ $ conda install leidenalg tslearn
 $ tar zxf capital-0.1.3.tar.gz
 $ cd capital-0.1.3
 ```
+
 ## Pipeline
 CAPITAL consists of three python codes. The standard use of CAPITAL is illustrated with the following steps:
 
 ### Step 1: run pre_capital.py to preprocess raw data of scRNA-seq gene expression for each experiment
 ```
-$ ./pre_capital.py [option]* /path/to/data1
-$ ./pre_capital.py [option]* /path/to/data2
+$ ./pre_capital.py [option]* <data1>
+$ ./pre_capital.py [option]* <data2>
 ```
 
 #### Usage (pre_capital.py)
 ```
-usage: ./pre_capital.py [option]* <data>
-
 positional arguments:
   data <STR>            path to the raw data of scRNA-seq gene expression
                         profile
@@ -76,6 +75,33 @@ optional arguments:
   -n <STR>, --name <STR>
                         save data as <name>.h5ad
   --save-fig            save a UMAP PDF figure in ./figures [off]
+```
+
+### Step 2: run capital.py to predict pseudotime trajectories for two preprocessed data and compute a trajectory alignment
+```
+$ ./capital.py [option]* <data1> <data2> <root1> <root2> <genes>
+```
+
+#### Usage (capital.py)
+```
+positional arguments:
+  data1 <STR>           path to the preprocessed expression data for
+                        experiment 1 generated with pre_capital.py
+  data2 <STR>           path to the preprocessed expression data for
+                        experiment 2 generated with pre_capital.py
+  root1 <STR>           root cluster in data1
+  root2 <STR>           root cluster in data2
+  genes <STR>           path to the file that contains gene names to be
+                        analyzed (one gene per line)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -g <INT>, --gapcost <INT>
+                        gap cost used to calculate tree alignment [3]
+  --n-genes1 <INT>      number of highly variable genes in data1 [2000]
+  --n-genes2 <INT>      number of highly variable genes in data2 [2000]
+  --local-align         calculate dynamic time warping on local ailgnment
+                        [off]
 ```
 
 ## Reference
