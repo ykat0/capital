@@ -46,6 +46,14 @@ $ conda install leidenalg tslearn
 $ tar zxf capital-0.1.3.tar.gz
 $ cd capital-0.1.3
 ```
+## Usage
+The standard use of CAPITAL is illustrated with the following steps:
+
+### Step 1: run pre_capital.py to preprocess raw data of scRNA-seq gene expression for each experiment
+```
+$ ./pre_capital.py [option]* <data1>
+$ ./pre_capital.py [option]* <data1>
+```
 
 ## Reference
 Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
