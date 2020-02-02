@@ -104,6 +104,26 @@ optional arguments:
                         [off]
 ```
 
+### Step 3: run draw_capital.py to show figures on dynamic time warping and expression dynamics for genes specified in Step 2
+```
+$ ./draw_capital.py [option]* <alignment>
+```
+
+#### Usage (draw_capital.py)
+```
+positional arguments:
+  alignment <STR>       path to the aligned data generated with capital.py
+                        (e.g. ./data1_data2/alignment001)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --data1-name <STR>    data1 name on the plot
+  --data2-name <STR>    data2 name on the plot
+  --save-dtw <STR>      path to the figure file on dynamic time warping
+  --save-dynamics <STR>
+                        path to the figure file on expression dynamics
+```
+
 ## Reference
 Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
 **Alignment of time-course single-cell RNA-seq data with CAPITAL**,
