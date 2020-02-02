@@ -55,7 +55,7 @@ $ ./pre_capital.py [option]* <data1>
 $ ./pre_capital.py [option]* <data2>
 ```
 
-#### Usage (pre_capital.py)
+#### Usage: pre_capital.py
 ```
 positional arguments:
   data <STR>            path to the raw (TXT, CSV or H5AD) data of scRNA-seq
@@ -82,7 +82,7 @@ optional arguments:
 $ ./capital.py [option]* <data1> <data2> <root1> <root2> <genes>
 ```
 
-#### Usage (capital.py)
+#### Usage: capital.py
 ```
 positional arguments:
   data1 <STR>           path to the preprocessed expression H5AD data for
@@ -109,7 +109,7 @@ optional arguments:
 $ ./draw_capital.py [option]* <alignment>
 ```
 
-#### Usage (draw_capital.py)
+#### Usage: draw_capital.py
 ```
 positional arguments:
   alignment <STR>     path to the aligned data generated with capital.py (e.g.
