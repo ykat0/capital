@@ -10,7 +10,7 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 * CAPITAL (ver. 0.1.5) (**capital-0.1.5.tar.gz**) in Python
 
 ### Requirements
-* Python >= 3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
+* Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
 * leidenalg
 * matplotlib
 * networkx>=2.4
