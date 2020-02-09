@@ -20,6 +20,7 @@
 * Allow multiple genes input in capital.py
 * Change the definition of a cluster centroid to a vector of the median of expression of each gene in the cluster
 * Add a function for showing normalized alignment distance
+* Fix a bug in traceback of tree alignment in capital.py
 
 ## Ver. 0.1.0 (2020-01-21)
 
