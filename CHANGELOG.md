@@ -1,5 +1,11 @@
 # Changelog
 
+## Ver. 0.1.6 (2020-02-10)
+
+* Improve a method for saving a PDF figure in pre_capital.py
+* Add a function for showing a progress bar when calculating dynamic time warping for each gene in capital.py
+* Change part of directories/files naming in capital.py
+
 ## Ver. 0.1.5 (2020-02-07)
 
 * Fix a bug on print and change generated directories/files naming in capital.py
