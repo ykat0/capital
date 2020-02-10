@@ -58,8 +58,8 @@ $ ./pre_capital.py [option]* <data2>
 #### Usage: pre_capital.py
 ```
 positional arguments:
-  data <STR>            path to the raw (TXT, CSV or H5AD) data of scRNA-seq
-                        gene expression profile
+  data <STR>            path to the raw [TXT|CSV|H5AD] data of scRNA-seq gene
+                        expression profile
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -73,7 +73,7 @@ optional arguments:
                         k-nearest neighbor graph [10]
   --no-save             results are not saved [on: saved in ./processed_data]
   -n <STR>, --name <STR>
-                        save data as <name>.h5ad
+                        save data as <name>.h5ad and umap_<name>.pdf
   --save-fig            save a UMAP PDF figure in ./figures [off]
 ```
 
