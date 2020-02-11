@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 0.1.7 (2020-02-11)
+* Change part of option symbols in pre_capital.py and capital.py to avoid inconsistency between scripts as much as possible
+* Add a tuning mode in capital.py, which affects only naming of the result directory
+
 ## Ver. 0.1.6 (2020-02-10)
 
 * Improve a method for saving a PDF figure in pre_capital.py
