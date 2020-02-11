@@ -2,12 +2,12 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2020-02-10
+Last updated: 2020-02-11
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
 ## Installation
-* CAPITAL (ver. 0.1.6) in Python
+* CAPITAL (ver. 0.1.7) in Python
 
 ### Requirements
 * Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
@@ -42,8 +42,8 @@ $ conda install leidenalg tslearn
 
 2. Download the tarball, and type the followings in your terminal:
 ```
-$ tar zxf capital-0.1.6.tar.gz
-$ cd capital-0.1.6
+$ tar zxf capital-0.1.7.tar.gz
+$ cd capital-0.1.7
 ```
 
 ## Pipeline
@@ -66,14 +66,14 @@ optional arguments:
   -t, --transpose       transpose the data [off]
   --min-genes <INT>     minimum number of genes expressed to keep [200]
   --min-cells <INT>     minimum number of cells expressed to keep [3]
-  -g <INT>, --top-n-genes <INT>
+  -n <INT>, --top-n-genes <INT>
                         number of highly variable genes to keep [1000]
   -k <INT>, --neighbors <INT>
                         size k of local neighborhood used to compute a
                         k-nearest neighbor graph [10]
   --no-save             results are not saved [on: saved in ./processed_data]
-  -n <STR>, --name <STR>
-                        save data as <name>.h5ad and umap_<name>.pdf
+  -f <STR>, --filename <STR>
+                        save data as <filename>.h5ad and umap_<filename>.pdf
   --save-fig            save a UMAP PDF figure in ./figures [off]
 ```
 
@@ -96,12 +96,16 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -g <INT>, --gapcost <INT>
+  -c <INT>, --gapcost <INT>
                         gap cost used to calculate tree alignment [3]
-  --n-genes1 <INT>      number of highly variable genes in data1 [2000]
-  --n-genes2 <INT>      number of highly variable genes in data2 [2000]
-  --local-align         calculate dynamic time warping on local ailgnment
+  -m <INT>, --n-genes1 <INT>
+                        number of highly variable genes in data1 [2000]
+  -n <INT>, --n-genes2 <INT>
+                        number of highly variable genes in data2 [2000]
+  -l, --local-align     calculate dynamic time warping on local ailgnment
                         [off]
+  -t, --tune            tuning mode, which affects naming of the result
+                        directory [off]
 ```
 
 ### Step 3: run draw_capital.py to show figures on dynamic time warping and/or expression dynamics for a gene in aligned_data created in Step 2
