@@ -1,8 +1,13 @@
 # Changelog
 
+## Ver. 0.1.8 (2020-02-13)
+* Show the number of predicted clusters in standard out in pre_capital.py
+* Change the hierarchy of generated directories in capital.py
+* Improve the naming of result directories in the tuning mode in capital.py
+
 ## Ver. 0.1.7 (2020-02-11)
 * Change part of option symbols in pre_capital.py and capital.py to avoid inconsistency between scripts as much as possible
-* Add a tuning mode in capital.py, which affects only naming of the result directory
+* Add a tuning mode in capital.py, which affects only naming of result directories
 
 ## Ver. 0.1.6 (2020-02-10)
 

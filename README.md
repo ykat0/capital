@@ -2,12 +2,12 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2020-02-11
+Last updated: 2020-02-13
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
 ## Installation
-* CAPITAL (ver. 0.1.7) in Python
+* CAPITAL (ver. 0.1.8) in Python
 
 ### Requirements
 * Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
@@ -42,8 +42,8 @@ $ conda install leidenalg tslearn
 
 2. Download the tarball, and type the followings in your terminal:
 ```
-$ tar zxf capital-0.1.7.tar.gz
-$ cd capital-0.1.7
+$ tar zxf capital-0.1.8.tar.gz
+$ cd capital-0.1.8
 ```
 
 ## Pipeline
@@ -116,8 +116,9 @@ $ ./draw_capital.py [option]* <alignment>
 #### Usage: draw_capital.py
 ```
 positional arguments:
-  alignment <STR>     path to the aligned data generated with capital.py (e.g.
-                      ./aligned_data/data1_data2/alignment001)
+  alignment <STR>     path to the directory for aligned data generated with
+                      capital.py (e.g.
+                      ./aligned_data/gene/data1_data2/alignment001)
 
 optional arguments:
   -h, --help          show this help message and exit
