@@ -1,5 +1,12 @@
 # Changelog
 
+## Ver. 0.1.9 (2020-02-15)
+* Compress output H5AD data generated with pre_capital.py and capital.py to save disk space
+* Disable output of H5AD data when '-t' option is used in capital.py
+* Change the hierarchy of generated aligned_data directory to remove redundancy
+* Fix a bug that occurs when no directory for saving figures is found in draw_capital.py
+* Change some option symbols in draw_capital.py for usability
+
 ## Ver. 0.1.8 (2020-02-13)
 * Show the number of predicted clusters in standard out in pre_capital.py
 * Change the hierarchy of generated directories in capital.py
