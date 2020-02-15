@@ -77,7 +77,7 @@ optional arguments:
   --save-fig            save a UMAP PDF figure in ./figures [off]
 ```
 
-### Step 2: run capital.py to predict pseudotime trajectories for two preprocessed data and compute a trajectory alignment
+### Step 2: run capital.py to predict pseudotime trajectories for two preprocessed data, and compute a trajectory alignment along with associated dynamic time warping of each aligned path
 ```
 $ ./capital.py [option]* <data1> <data2> <root1> <root2> <genes>
 ```
@@ -108,7 +108,7 @@ optional arguments:
                         directory and never saves H5AD data [off]
 ```
 
-### Step 3: run draw_capital.py to show figures on dynamic time warping and/or expression dynamics for a gene in aligned_data created in Step 2
+### Step 3: run draw_capital.py to draw figures on dynamic time warping and/or expression dynamics for a gene in aligned_data created in Step 2
 ```
 $ ./draw_capital.py [option]* <alignment>
 ```
