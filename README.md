@@ -2,12 +2,12 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2020-02-13
+Last updated: 2020-02-15
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
 ## Installation
-* CAPITAL (ver. 0.1.8) in Python
+* CAPITAL (ver. 0.1.9) in Python
 
 ### Requirements
 * Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
@@ -42,8 +42,8 @@ $ conda install leidenalg tslearn
 
 2. Download the tarball, and type the followings in your terminal:
 ```
-$ tar zxf capital-0.1.8.tar.gz
-$ cd capital-0.1.8
+$ tar zxf capital-0.1.9.tar.gz
+$ cd capital-0.1.9
 ```
 
 ## Pipeline
@@ -105,7 +105,7 @@ optional arguments:
   -l, --local-align     calculate dynamic time warping on local ailgnment
                         [off]
   -t, --tune            tuning mode, which affects naming of the result
-                        directory [off]
+                        directory and never saves H5AD data [off]
 ```
 
 ### Step 3: run draw_capital.py to show figures on dynamic time warping and/or expression dynamics for a gene in aligned_data created in Step 2
@@ -118,15 +118,16 @@ $ ./draw_capital.py [option]* <alignment>
 positional arguments:
   alignment <STR>     path to the directory for aligned data generated with
                       capital.py (e.g.
-                      ./aligned_data/gene/data1_data2/alignment001)
+                      ./aligned_data/data1_data2/gene/alignment001)
 
 optional arguments:
   -h, --help          show this help message and exit
+  --dtw <STR>         path to the file for a (e.g. PDF) figure on dynamic time
+                      warping
+  --dyn <STR>         path to the file for a (e.g. PDF) figure on gene
+                      expression dynamics
   --data1-name <STR>  data1 name on the plot
   --data2-name <STR>  data2 name on the plot
-  --save-dtw <STR>    path to the (e.g. PDF) figure on dynamic time warping
-  --save-dyn <STR>    path to the (e.g. PDF) figure on gene expression
-                      dynamics
 ```
 
 ## Reference
