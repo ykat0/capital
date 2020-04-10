@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 0.1.10 (2020-04-10)
+* Fix a bug on dynamic programing calculation in capital.py
+* Fix a bug on displaying a figure for tree alignment in capital.py
+
 ## Ver. 0.1.9 (2020-02-15)
 * Compress output H5AD data generated with pre_capital.py and capital.py to save disk space
 * Disable output of H5AD data when '-t' option is used in capital.py
