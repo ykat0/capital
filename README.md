@@ -71,6 +71,9 @@ optional arguments:
   -k <INT>, --neighbors <INT>
                         size k of local neighborhood used to compute a
                         k-nearest neighbor graph [10]
+  -p <INT>, --n_pcs <INT>
+                        number of PCs used to compute a k-nearest neighbor
+                        graph and a tree [50]
   --no-save             results are not saved [on: saved in ./processed_data]
   -f <STR>, --filename <STR>
                         save data as <filename>.h5ad and umap_<filename>.pdf
@@ -102,6 +105,9 @@ optional arguments:
                         number of highly variable genes in data1 [2000]
   -n <INT>, --n-genes2 <INT>
                         number of highly variable genes in data2 [2000]
+  -M {euclid,gauss,paga}, --method {euclid,gauss,paga}
+                        method used to calculate tree (PAGA adjacency matrix
+                        is used by default) [paga]
   -l, --local-align     calculate dynamic time warping on local ailgnment
                         [off]
   -t, --tune            tuning mode, which affects naming of the result
