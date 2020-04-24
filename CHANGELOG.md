@@ -1,5 +1,10 @@
 # Changelog
 
+## Ver. 0.1.11 (2020-04-24)
+* Add '-p' option to specify the number of principal components to construct a nearest neighbor graph in pre_capital.py
+* Add '-M' option to specify the way of computing a minimum spanning tree (Euclid distance, adaptive Gaussian kernel or PAGA connectivity) in capital.py
+* Improve some processes for speed-up
+
 ## Ver. 0.1.10 (2020-04-10)
 * Fix a bug on dynamic programing calculation in capital.py
 * Fix a bug on displaying a figure for tree alignment in capital.py
