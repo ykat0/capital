@@ -12,31 +12,22 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 ### Requirements
 * Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
 * leidenalg
-* matplotlib
-* networkx>=2.4
-* numpy
-* pandas
 * scanpy
-* scikit-learn
-* scipy
 * tslearn
 
 ### Install on Linux, Windows (WSL) and macOS
 0. Create a new environment for CAPITAL if you want to keep your own Python environment built with conda:
 ```
-$ conda create -n capital python=3.7
+$ conda create -n capital python=3.8
 ```
 Then, activate the environment:
 ```
-$ source activate capital
+$ conda activate capital
 ```
 
 1. Install [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) with conda:
 ```
 $ conda install -c bioconda scanpy
-```
-This command will install almost all of the required modules other than "leidenalg" and "tslearn," so you will have to install them manually by:
-```
 $ conda install leidenalg tslearn
 ```
 
