@@ -25,7 +25,7 @@ Then, activate the environment:
 $ conda activate capital
 ```
 
-1. Install [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) with conda:
+1. Install [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) and others with conda:
 ```
 $ conda install -c bioconda scanpy
 $ conda install leidenalg tslearn
