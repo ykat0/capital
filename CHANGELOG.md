@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 0.1.12 (2020-05-01)
+* Fix a bug in the statement on concatenation of AnnData in capital.py
+* Keep the name of a method for computing a tree in the result directory when the tuning mode is on in capital.py
+
 ## Ver. 0.1.11 (2020-04-24)
 * Add '-p' option to specify the number of principal components to construct a nearest neighbor graph in pre_capital.py
 * Add '-M' option to specify the way of computing a minimum spanning tree (Euclid distance, adaptive Gaussian kernel or PAGA connectivity) in capital.py

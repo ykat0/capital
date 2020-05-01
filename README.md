@@ -2,12 +2,12 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2020-04-24
+Last updated: 2020-05-01
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
 ## Installation
-* CAPITAL (ver. 0.1.11) in Python
+* CAPITAL (ver. 0.1.12) in Python
 
 ### Requirements
 * Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
@@ -33,8 +33,8 @@ $ conda install leidenalg tslearn
 
 2. Download the tarball, and type the followings in your terminal:
 ```
-$ tar zxf capital-0.1.11.tar.gz
-$ cd capital-0.1.11
+$ tar zxf capital-0.1.12.tar.gz
+$ cd capital-0.1.12
 ```
 
 ## Pipeline
@@ -60,11 +60,9 @@ optional arguments:
   -n <INT>, --top-n-genes <INT>
                         number of highly variable genes to keep [1000]
   -k <INT>, --neighbors <INT>
-                        size k of local neighborhood used to compute a
-                        k-nearest neighbor graph [10]
-  -p <INT>, --n_pcs <INT>
-                        number of PCs used to compute a k-nearest neighbor
-                        graph and a tree [50]
+                        size k of local neighborhood used to compute a k-nearest neighbor graph [10]
+  -p <INT>, --n-pcs <INT>
+                        number of PCs used to compute a k-nearest neighbor graph and a tree [50]
   --no-save             results are not saved [on: saved in ./processed_data]
   -f <STR>, --filename <STR>
                         save data as <filename>.h5ad and umap_<filename>.pdf
@@ -97,12 +95,9 @@ optional arguments:
   -n <INT>, --n-genes2 <INT>
                         number of highly variable genes in data2 [2000]
   -M {euclid,gauss,paga}, --method {euclid,gauss,paga}
-                        method used to calculate tree (PAGA adjacency matrix
-                        is used by default) [paga]
-  -l, --local-align     calculate dynamic time warping on local ailgnment
-                        [off]
-  -t, --tune            tuning mode, which affects naming of the result
-                        directory and never saves H5AD data [off]
+                        method used to calculate a tree [paga]
+  -l, --local-align     calculate dynamic time warping on local ailgnment [off]
+  -t, --tune            tuning mode, which affects naming of the result directory and never saves H5AD data [off]
 ```
 
 ### Step 3: run draw_capital.py to draw figures on dynamic time warping and/or expression dynamics for a gene in aligned_data created in Step 2
