@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 0.1.13 (2020-05-08)
+* Change the data type of gapcost to float in capital.py
+* Keep the value of a gapcost in the result directory when the tuning mode is on in capital.py
+
 ## Ver. 0.1.12 (2020-05-01)
 * Fix a bug in the statement on concatenation of AnnData in capital.py
 * Keep the name of a method for computing a tree in the result directory when the tuning mode is on in capital.py

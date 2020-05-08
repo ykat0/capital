@@ -2,12 +2,12 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2020-05-01
+Last updated: 2020-05-08
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
 ## Installation
-* CAPITAL (ver. 0.1.12) in Python
+* CAPITAL (ver. 0.1.13) in Python
 
 ### Requirements
 * Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
@@ -33,8 +33,8 @@ $ conda install leidenalg tslearn
 
 2. Download the tarball, and type the followings in your terminal:
 ```
-$ tar zxf capital-0.1.12.tar.gz
-$ cd capital-0.1.12
+$ tar zxf capital-0.1.13.tar.gz
+$ cd capital-0.1.13
 ```
 
 ## Pipeline
@@ -88,14 +88,14 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  -c <INT>, --gapcost <INT>
-                        gap cost used to calculate tree alignment [3]
+  -c <FLOAT>, --gapcost <FLOAT>
+                        gap cost used to calculate tree alignment [2.0]
   -m <INT>, --n-genes1 <INT>
                         number of highly variable genes in data1 [2000]
   -n <INT>, --n-genes2 <INT>
                         number of highly variable genes in data2 [2000]
   -M {euclid,gauss,paga}, --method {euclid,gauss,paga}
-                        method used to calculate a tree [paga]
+                        method used to calculate a tree [euclid]
   -l, --local-align     calculate dynamic time warping on local ailgnment [off]
   -t, --tune            tuning mode, which affects naming of the result directory and never saves H5AD data [off]
 ```
