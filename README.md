@@ -89,7 +89,7 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   -c <FLOAT>, --gapcost <FLOAT>
-                        gap cost used to calculate tree alignment [1.5]
+                        gap cost used to calculate tree alignment [1.0]
   -m <INT>, --n-genes1 <INT>
                         number of highly variable genes in data1 [2000]
   -n <INT>, --n-genes2 <INT>
