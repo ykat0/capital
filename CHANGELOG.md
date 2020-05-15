@@ -1,5 +1,8 @@
 # Changelog
 
+## Ver. 0.1.14 (2020-05-15)
+* Improve the naming of the result directory with respect to gapcost in the tuning mode in capital.py
+
 ## Ver. 0.1.13 (2020-05-08)
 * Change the data type of gapcost to float in capital.py
 * Keep the value of a gapcost in the result directory when the tuning mode is on in capital.py
