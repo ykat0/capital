@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 0.2.0 (2020-06-01)
+* Adjust CAPITAL codes to the recent Scanpy update to 1.5
+* Add a function for 10x-MTX directory input in pre_capital.py
+
 ## Ver. 0.1.14 (2020-05-15)
 * Improve the naming of the result directory with respect to gapcost in the tuning mode in capital.py
 

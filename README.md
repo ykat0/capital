@@ -2,17 +2,17 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2020-05-15
+Last updated: 2020-06-01
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
 ## Installation
-* CAPITAL (ver. 0.1.14) in Python
+* CAPITAL (ver. 0.2.0) in Python
 
 ### Requirements
 * Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
 * leidenalg
-* scanpy
+* scanpy>=1.5
 * tslearn
 
 ### Install on Linux, Windows (WSL) and macOS
@@ -33,8 +33,8 @@ $ conda install leidenalg tslearn
 
 2. Download the tarball, and type the followings in your terminal:
 ```
-$ tar zxf capital-0.1.14.tar.gz
-$ cd capital-0.1.14
+$ tar zxf capital-0.2.0.tar.gz
+$ cd capital-0.2.0
 ```
 
 ## Pipeline
@@ -49,8 +49,7 @@ $ ./pre_capital.py [option]* <data2>
 #### Usage: pre_capital.py
 ```
 positional arguments:
-  data <STR>            path to the raw [TXT|CSV|H5AD] data of scRNA-seq gene
-                        expression profile
+  data <STR>            path to the raw [H5AD|CSV|TXT] file or 10x-MTX directory of scRNA-seq gene expression profile
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -62,7 +61,7 @@ optional arguments:
   -k <INT>, --neighbors <INT>
                         size k of local neighborhood used to compute a k-nearest neighbor graph [10]
   -p <INT>, --n-pcs <INT>
-                        number of PCs used to compute a k-nearest neighbor graph and a tree [50]
+                        number of principal components used to compute a k-nearest neighbor graph and a tree [50]
   --no-save             results are not saved [on: saved in ./processed_data]
   -f <STR>, --filename <STR>
                         save data as <filename>.h5ad and umap_<filename>.pdf
@@ -77,14 +76,11 @@ $ ./capital.py [option]* <data1> <data2> <root1> <root2> <genes>
 #### Usage: capital.py
 ```
 positional arguments:
-  data1 <STR>           path to the preprocessed expression H5AD data for
-                        experiment 1 generated with pre_capital.py
-  data2 <STR>           path to the preprocessed expression H5AD data for
-                        experiment 2 generated with pre_capital.py
+  data1 <STR>           path to the preprocessed expression H5AD data for experiment 1 generated with pre_capital.py
+  data2 <STR>           path to the preprocessed expression H5AD data for experiment 2 generated with pre_capital.py
   root1 <STR>           root cluster in data1
   root2 <STR>           root cluster in data2
-  genes <STR>           path to the file that contains gene names to be
-                        analyzed (one gene per line)
+  genes <STR>           path to the file that contains gene names to be analyzed (one gene per line)
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -96,7 +92,7 @@ optional arguments:
                         number of highly variable genes in data2 [2000]
   -M {euclid,gauss,paga}, --method {euclid,gauss,paga}
                         method used to calculate a tree [euclid]
-  -l, --local-align     calculate dynamic time warping on local ailgnment [off]
+  -l, --local-align     calculate dynamic time warping on local alignment [off]
   -t, --tune            tuning mode, which affects naming of the result directory and never saves H5AD data [off]
 ```
 
@@ -108,16 +104,12 @@ $ ./draw_capital.py [option]* <alignment>
 #### Usage: draw_capital.py
 ```
 positional arguments:
-  alignment <STR>     path to the directory for aligned data generated with
-                      capital.py (e.g.
-                      ./aligned_data/data1_data2/gene/alignment001)
+  alignment <STR>     path to the directory for aligned data generated with capital.py (e.g. ./aligned_data/data1_data2/gene/alignment001)
 
 optional arguments:
   -h, --help          show this help message and exit
-  --dtw <STR>         path to the file for a (e.g. PDF) figure on dynamic time
-                      warping
-  --dyn <STR>         path to the file for a (e.g. PDF) figure on gene
-                      expression dynamics
+  --dtw <STR>         path to the file for a (e.g. PDF) figure on dynamic time warping
+  --dyn <STR>         path to the file for a (e.g. PDF) figure on gene expression dynamics
   --data1-name <STR>  data1 name on the plot
   --data2-name <STR>  data2 name on the plot
 ```
