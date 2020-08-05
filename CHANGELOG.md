@@ -8,7 +8,7 @@
 * Remove '--save' option in draw_capital.py, meaning that a figure file will be always saved
 * Remove '--showfig' option in draw_capital.py
 * Add x-label (and y-label) on plots generated with draw_capital.py
-* Adjust the layout of a figure legend to the figure area if --data1-name (--data2-name) is specified.
+* Adjust the layout of a figure legend to the figure area if --data1-name (--data2-name) is specified
 
 ## Ver. 0.2.1 (2020-06-21)
 * Fix a bug on the process without cluster in capital.py
