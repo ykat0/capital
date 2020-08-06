@@ -3,8 +3,9 @@
 ## Ver. 0.2.2 (2020-08-05)
 * Fix a bug for 10x Genomics data in capital.py
 * Replace '--local-align' option with '--no-prune' in capital.py
+* Add a new function for automatically saving figures on trajectory trees and their alignment in capital.py
 * Add a new positional argument \<genes\> in draw_capital.py, so that a user can input multiple genes all together
-* Add a new function for saving figures automatically in the alignment directory if a user does not specify where to save
+* Add a new function for automatically saving figures on dynamic time warping and expression dynamics in the alignment directory generated with capital.py if a user does not specify where to save in draw_capital.py
 * Remove '--save' option in draw_capital.py, meaning that a figure file will be always saved
 * Remove '--showfig' option in draw_capital.py
 * Add x-label (and y-label) on plots generated with draw_capital.py
