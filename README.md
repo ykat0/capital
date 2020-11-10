@@ -15,7 +15,7 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 * leidenalg
 * magic-impute
 * pygraphviz
-* scanpy>=1.5
+* scanpy>=1.6
 * scprep
 * tslearn
 
