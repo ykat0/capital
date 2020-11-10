@@ -2,7 +2,7 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2020-08-05
+Last updated: 2020-11-10
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
@@ -10,11 +10,17 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 * CAPITAL (ver. 0.2.2) in Python
 
 ### Requirements
-* Python>=3.6 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
+* Python>=3.8 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
+* graphtools
 * leidenalg
+* magic-impute
 * pygraphviz
 * scanpy>=1.5
+* scprep
 * tslearn
+
+### Option
+* jupyterlab
 
 ### Install on Linux, Windows (WSL) and macOS
 0. Create a new environment for CAPITAL if you want to keep your own Python environment built with conda:
@@ -26,13 +32,18 @@ Then, activate the environment:
 $ conda activate capital
 ```
 
-1. Install [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) and others with conda:
+1. Install [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) and others via conda:
 ```
 $ conda install -c bioconda scanpy
-$ conda install leidenalg pygraphviz tslearn
+$ conda install graphtools leidenalg pygraphviz scprep tslearn
 ```
 
-2. Download the tarball, and type the followings in your terminal:
+2. Install [MAGIC](https://magic.readthedocs.io/en/stable/) via pip:
+```
+$ pip install --no-deps magic-impute
+```
+
+3. Download the tarball, and type the followings in your terminal:
 ```
 $ tar zxf capital-0.2.2.tar.gz
 $ cd capital-0.2.2
