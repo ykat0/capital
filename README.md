@@ -2,7 +2,7 @@
 
 ### Alignment of time-course single-cell RNA-seq data
 
-Last updated: 2020-11-10
+Last updated: 2020-11-11
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
@@ -12,6 +12,7 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 ### Requirements
 * Python>=3.8 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
 * graphtools
+* h5py<=2.10
 * leidenalg
 * magic-impute
 * pygraphviz
@@ -36,6 +37,10 @@ $ conda activate capital
 ```
 $ conda install -c bioconda scanpy
 $ conda install graphtools leidenalg pygraphviz scprep tslearn
+```
+Note: the above command may automatically install h5py>=3.0, which will cause the problem of having bytes labels in H5Ad data. To circumvent this, try:
+```
+$ conda install h5py=2
 ```
 
 2. Install [MAGIC](https://magic.readthedocs.io/en/stable/) via pip:
