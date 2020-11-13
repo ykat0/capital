@@ -1,13 +1,14 @@
 # CAPITAL
 
-### Alignment of time-course single-cell RNA-seq data
+### Comparative pseudotime analysis of single-cell RNA-seq data
 
-Last updated: 2020-11-11
+Last updated: 2020-11-13
 
 We present CAPITAL, a method for comparing pseudotime trajectories with tree alignment whereby trajectories including branching can be compared without any knowledge of paths to be compared.
 
 ## Installation
-* CAPITAL (ver. 0.2.2) in Python
+* CAPITAL (ver. 0.2.3) in Python
+More user-friendly version (1.0.0) that can be used in an interactive development environment such as JupyterLab will be available soon.
 
 ### Requirements
 * Python>=3.8 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
@@ -50,8 +51,8 @@ $ pip install --no-deps magic-impute
 
 3. Download the tarball, and type the followings in your terminal:
 ```
-$ tar zxf capital-0.2.2.tar.gz
-$ cd capital-0.2.2
+$ tar zxf capital-0.2.3.tar.gz
+$ cd capital-0.2.3
 ```
 
 ## Pipeline
@@ -71,14 +72,15 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   -t, --transpose       transpose the data [off]
-  --min-genes <INT>     minimum number of genes expressed to keep [200]
-  --min-cells <INT>     minimum number of cells expressed to keep [3]
+  --min-genes <INT>     keep cells with at least <INT> genes expressed [200]
+  --min-cells <INT>     keep genes that are expressed in at least <INT> cells [3]
+  --magic               impute gene expression data with MAGIC [off]
   -n <INT>, --top-n-genes <INT>
                         number of highly variable genes to keep [2000]
-  -k <INT>, --neighbors <INT>
-                        size k of local neighborhood used to compute a k-nearest neighbor graph [10]
   -p <INT>, --n-pcs <INT>
-                        number of principal components used to compute a k-nearest neighbor graph and a tree [50]
+                        number of principal components for computing a k-nearest neighbor graph and a tree [50]
+  -k <INT>, --neighbors <INT>
+                        compute an <INT>-nearest neighbor graph [10]
   --no-save             results are not saved [off: saved in ./processed_data]
   -f <STR>, --filename <STR>
                         save data as <filename>.h5ad and umap_<filename>.pdf
@@ -101,14 +103,16 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
+  -M {euclid,gauss,paga}, --method {euclid,gauss,paga}
+                        method for calculating a tree [euclid]
+  -d {pca,diffmap}, --dimension {pca,diffmap}
+                        dimension metric for calculating a tree [pca]
   -c <FLOAT>, --gapcost <FLOAT>
-                        gap cost used to calculate tree alignment [1.0]
+                        gap cost for calculating a tree alignment [1.0]
   -m <INT>, --n-genes1 <INT>
                         number of highly variable genes in data1 [2000]
   -n <INT>, --n-genes2 <INT>
                         number of highly variable genes in data2 [2000]
-  -M {euclid,gauss,paga}, --method {euclid,gauss,paga}
-                        method used to calculate a tree [euclid]
   -t, --tune            tuning mode, which affects naming of the result directory and never saves H5AD data [off]
   --no-prune            disable pruning of space nodes on edges of each alignment path for dynamic time warping [off]
 ```
@@ -126,10 +130,10 @@ positional arguments:
 
 optional arguments:
   -h, --help          show this help message and exit
-  --dtw <STR>         path to the directory for a figure on dynamic time warping. unless specified, the figure will be saved in each gene file in    
-                      the alignment directory.
-  --dyn <STR>         path to the directory for a figure on gene expression dynamics. unless specified, the figure will be saved in each gene file   
-                      in the alignment directory.
+  --dtw <STR>         path to the directory for a figure on dynamic time warping. Unless specified, the figure will be saved in each gene file in    
+                      the alignment directory
+  --dyn <STR>         path to the directory for a figure on gene expression dynamics. Unless specified, the figure will be saved in each gene file   
+                      in the alignment directory
   --data1-name <STR>  data1 name on the plot
   --data2-name <STR>  data2 name on the plot
 ```
