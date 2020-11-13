@@ -8,6 +8,7 @@ We present CAPITAL, a method for comparing pseudotime trajectories with tree ali
 
 ## Installation
 * CAPITAL (ver. 0.2.3) in Python
+
 More user-friendly version (1.0.0) that can be used in an interactive development environment such as JupyterLab will be available soon.
 
 ### Requirements
