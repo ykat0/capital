@@ -1,5 +1,10 @@
 # Changelog
 
+## Ver. 0.2.3 (2020-11-13)
+* Add '--magic' option to impute gene expression data with [MAGIC](https://magic.readthedocs.io/en/stable/) in pre_capital.py
+* Fix a minor bug in draw_capital.py
+* Improve calculation processes in all codes
+
 ## Ver. 0.2.2 (2020-08-05)
 * Fix a bug for 10x Genomics data in capital.py
 * Replace '--local-align' option with '--no-prune' in capital.py
