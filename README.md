@@ -40,7 +40,7 @@ $ conda activate capital
 $ conda install -c bioconda scanpy
 $ conda install graphtools leidenalg pygraphviz scprep tslearn
 ```
-Note: the above command may automatically install h5py>=3.0, which will cause the problem of having bytes labels in H5Ad data. To circumvent this, try:
+Note: the above command may automatically install h5py>=3.0, which will cause the problem of having bytes labels in H5AD data. To circumvent this, try:
 ```
 $ conda install h5py=2
 ```
