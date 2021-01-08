@@ -1,9 +1,13 @@
 # Datasets tailored for CAPITAL
 
-Last updated: 2021-01-0
+Last updated: 2021-01-08
+
+## Synthetic datasets generated with dyngen
+* Available on this page.
 
 ## Human bone marrow cells
-* Setty et al's data is available [HERE](http://www.med.osaka-u.ac.jp/pub/rna/ykato/project/capital/data/setty2019_magic_n2000_k40_r4.h5ad)
+* Setty et al's dataset is available [HERE](http://www.med.osaka-u.ac.jp/pub/rna/ykato/project/capital/data/setty2019_magic_n2000_k40_r4.h5ad).
+* Velten et al's dataset is available on this page.
 
 ## Reference
 Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
