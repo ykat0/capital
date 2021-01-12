@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>capital.pl.gene_expression_trend &mdash; CAPITAL 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="capital.tl.read_capital_data" href="capital.tl.read_capital_data.html" />
+    <link rel="prev" title="capital.pl.dtw" href="capital.pl.dtw.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> CAPITAL
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/capital_tutorial.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#tools-for-preprocessing">Tools for preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#tools-for-tree-alignment">Tools for tree alignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#calculate-gene-similarity">Calculate gene similarity</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#plotting">Plotting</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="capital.pl.trajectory_tree.html">capital.pl.trajectory_tree</a></li>
+<li class="toctree-l3"><a class="reference internal" href="capital.pl.tree_alignment.html">capital.pl.tree_alignment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="capital.pl.dtw.html">capital.pl.dtw</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">capital.pl.gene_expression_trend</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#read">Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dataset">Dataset</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">CAPITAL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">API</a> &raquo;</li>
+        
+      <li>capital.pl.gene_expression_trend</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/capital.pl.gene_expression_trend.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="section" id="capital-pl-gene-expression-trend">
+<h1>capital.pl.gene_expression_trend<a class="headerlink" href="#capital-pl-gene-expression-trend" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="capital.pl.gene_expression_trend">
+<code class="sig-prename descclassname">capital.pl.</code><code class="sig-name descname">gene_expression_trend</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aligned_data</span></em>, <em class="sig-param"><span class="n">gene</span></em>, <em class="sig-param"><span class="n">alignment</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">outliers</span><span class="o">=</span><span class="default_value">[100, 0]</span></em>, <em class="sig-param"><span class="n">polyfit_dimension</span><span class="o">=</span><span class="default_value">3</span></em>, <em class="sig-param"><span class="n">switch_psedotime</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">data1_name</span><span class="o">=</span><span class="default_value">'data1'</span></em>, <em class="sig-param"><span class="n">data2_name</span><span class="o">=</span><span class="default_value">'data2'</span></em>, <em class="sig-param"><span class="n">ncols</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">widthspace</span><span class="o">=</span><span class="default_value">0.5</span></em>, <em class="sig-param"><span class="n">heightspace</span><span class="o">=</span><span class="default_value">0.3</span></em>, <em class="sig-param"><span class="n">dpi</span><span class="o">=</span><span class="default_value">600</span></em>, <em class="sig-param"><span class="n">show</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">save</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#capital.pl.gene_expression_trend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot gene expression trend.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>aligned_data</strong> (<em>CapitalData</em>) – The data matrices containing the results of CAPTIAL.</p></li>
+<li><p><strong>gene</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>list</em><em>]</em>) – Keys for annotations of genes.</p></li>
+<li><p><strong>alignment</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>list</em><em>, </em><em>None</em><em>]</em><em>, </em><em>optional</em>) – Keys for alignments to be plotted. If <cite>None</cite>, all alignments will be plotted, by default <cite>None</cite>.</p></li>
+<li><p><strong>outliers</strong> (<em>list</em>) – Outliers for gene expression, by default [100, 0].</p></li>
+<li><p><strong>polyfit_dimension</strong> (<em>int</em>) – Degree of the fitting polynomial, by default 3.</p></li>
+<li><p><strong>switch_psedotime</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <cite>False</cite>, data1’s pseudotime is used to plot two expression trends. If <cite>True</cite>, switch it to data2’s pseudotime, by default <cite>False</cite>.</p></li>
+<li><p><strong>data1_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Text of data1’s legend, by default “data1”.</p></li>
+<li><p><strong>data2_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Text of data2’s legend, by default “data2”.</p></li>
+<li><p><strong>ncols</strong> (<em>int</em>) – Number of panels per row, by default 2.</p></li>
+<li><p><strong>widthspace</strong> (<em>float</em>) – Width of space in the panels, by default 0.5.</p></li>
+<li><p><strong>heightspace</strong> (<em>float</em>) – Height of space in the panels, by default 0.30.</p></li>
+<li><p><strong>show</strong> (<em>bool</em>) – If <cite>True</cite>, show the figure. If <cite>False</cite>, return the figure, by default <cite>True</cite>.</p></li>
+<li><p><strong>save</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>bool</em><em>]</em>) – If <cite>True</cite> or <cite>str</cite>, save the figure. If a path is specified as <cite>str</cite>, the figure is saved in the path, by default <cite>None</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="capital.tl.read_capital_data.html" class="btn btn-neutral float-right" title="capital.tl.read_capital_data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="capital.pl.dtw.html" class="btn btn-neutral float-left" title="capital.pl.dtw" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2021, Reiichi Sugihara, Yuki Kato, Tomoya Mori, Yukio Kawahara.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

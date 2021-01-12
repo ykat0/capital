@@ -1,0 +1,20 @@
+.. CAPITAL documentation master file, created by
+   sphinx-quickstart on Fri Nov 27 19:43:14 2020.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+CAPITAL - Comparative pseudotime analysis of single-cell RNA-seq data
+========================================================================
+
+We present CAPITAL, a computational method for comparing pseudotime trajectories with tree alignment whereby trajectories including branchings can be automatically compared.
+To see further details of CAPITAL, read `our paper <https://www.biorxiv.org/content/10.1101/859751v1>`_.
+
+.. toctree::
+   :maxdepth: 2
+
+   Installation
+   tutorials/index
+   api/index
+
+If you have any questions, please contact `Yuki Kato <http://www.med.osaka-u.ac.jp/pub/rna/ykato/en>`_. Graduate School of Medicine, Osaka University, Japan
+
