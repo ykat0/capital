@@ -10,11 +10,12 @@ import sphinx_rtd_theme
 import os
 import sys
 from datetime import datetime
+
 #sys.path.insert(0, os.path.abspath('../'))
-#sys.path.insert(0, os.path.join(os.path.dirname((os.path.abspath('.')), 'capital')))
-sys.path.insert(0, os.path.join(os.path.dirname((os.path.abspath('.')), 'capital', 'tl')))
-sys.path.insert(0, os.path.join(os.path.dirname((os.path.abspath('.')), 'capital', 'pl')))
-sys.path.insert(0, os.path.join(os.path.dirname((os.path.abspath('.')), 'capital', 'dataset')))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath('.')), 'capital'))
+#sys.path.insert(0, os.path.join(os.path.dirname((os.path.abspath('.')), 'capital', 'tl')))
+#sys.path.insert(0, os.path.join(os.path.dirname((os.path.abspath('.')), 'capital', 'pl')))
+#sys.path.insert(0, os.path.join(os.path.dirname((os.path.abspath('.')), 'capital', 'dataset')))
 
 # -- Project information -----------------------------------------------------
 
