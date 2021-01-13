@@ -16,7 +16,13 @@ import sphinx_rtd_theme
 # HERE is folder docs
 # HERE.parent is top of the directory
 HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE.parent))
+
+sys.path[:0] = [
+    str(HERE.parent / "capital"),
+    str(HERE.parent / "capital" / "tl"),
+    str(HERE.parent / "capital" / "pl"),
+    str(HERE.parent / "capital" / "dataset"),
+]
 
 # -- Project information -----------------------------------------------------
 
