@@ -2,7 +2,7 @@
 
 ## Ver. 1.0.0 (2021-01-13)
 * Provide a brand new system so that one can use CAPITAL interactively, which is useful for the interactive development environment JupyterLab
-* Upload CAPITAL codes to PyPI to install it via 'pip' command
+* Upload CAPITAL to PyPI to install it via 'pip' command
 * Upload a tutorial and API using a theme provided by Read the Docs
 * Upload datasets used in our work, which are available via CAPITAL's dataset functions
 * Improve running time
