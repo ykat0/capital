@@ -6,14 +6,15 @@
 
 # -- Path setup --------------------------------------------------------------
 
-import os
 import sys
 from datetime import datetime
 import sphinx_rtd_theme
+from pathlib import Path
 
-DOCS_DIR = os.path.dirname(os.path.abspath(__file__))
-CAPITAL_DIR = os.path.dirname(DOCS_DIR)
-sys.path.insert(0, CAPITAL_DIR)
+HERE = Path(__file__).parent
+sys.path[:0] = [str(HERE.parent)]
+
+import capital
 
 # -- Project information -----------------------------------------------------
 
