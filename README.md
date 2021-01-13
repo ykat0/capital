@@ -39,7 +39,7 @@ $ pip install capital
 ```
 
 ## Usage
-Read the documentation (available very soon). CAPITAL uses a single-cell analysis toolkit [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) in its implementation so that one can also use Scanpy's useful functions including preprocessing, plotting and datasets in the CAPITAL environment.
+Read the [documentation](https://capital.readthedocs.io/en/latest/). CAPITAL uses a single-cell analysis toolkit [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) in its implementation so that one can also use Scanpy's useful functions including preprocessing, plotting and datasets in the CAPITAL environment.
 
 ## Reference
 Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
