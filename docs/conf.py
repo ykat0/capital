@@ -8,21 +8,12 @@
 
 import os
 import sys
-from pathlib import Path
 from datetime import datetime
 import sphinx_rtd_theme
 
-#　sys.path.insert(0, os.path.abspath('../'))
-# HERE is folder docs
-# HERE.parent is top of the directory
-HERE = Path(__file__).parent
-
-sys.path[:0] = [
-    str(HERE.parent / "capital"),
-    str(HERE.parent / "capital" / "tl"),
-    str(HERE.parent / "capital" / "pl"),
-    str(HERE.parent / "capital" / "dataset"),
-]
+DOCS_DIR = os.path.dirname(os.path.abspath(__file__))
+CAPITAL_DIR = os.path.dirname(DOCS_DIR)
+sys.path.insert(0, CAPITAL_DIR)
 
 # -- Project information -----------------------------------------------------
 
