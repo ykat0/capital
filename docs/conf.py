@@ -12,17 +12,11 @@ from pathlib import Path
 from datetime import datetime
 import sphinx_rtd_theme
 
-#sys.path.insert(0, os.path.abspath('../'))
+#　sys.path.insert(0, os.path.abspath('../'))
 # HERE is folder docs
 # HERE.parent is top of the directory
 HERE = Path(__file__).parent
-sys.path[:0] = [
-    str(HERE.parent / "capital"),
-    str(HERE.parent / "capital" / "tl"),
-    str(HERE.parent / "capital" / "tl" / "tl.py"),
-    str(HERE.parent / "capital" / "pl" ),
-    str(HERE.parent / "capital" / "pl" / "pl.py"),
-    ]
+sys.path.insert(0, str(HERE.parent))
 
 # -- Project information -----------------------------------------------------
 
