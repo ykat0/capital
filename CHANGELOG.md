@@ -1,5 +1,14 @@
 # Changelog
 
+## Ver. 1.0.0 (2021-01-13)
+* Provide a brand new system so that one can use CAPITAL interactively, which is useful for the interactive development environment JupyterLab
+* Upload CAPITAL codes to PyPI to install it via 'pip' command
+* Upload a tutorial and API using a theme provided by Read the Docs
+* Upload datasets used in our work, which are available via CAPITAL's dataset functions
+* Improve running time
+* Fix minor bugs
+* Move early versions of CAPITAL to "legacy" directory 
+
 ## Ver. 0.2.3 (2020-11-13)
 * Add '--magic' option to impute gene expression data with [MAGIC](https://magic.readthedocs.io/en/stable/) in pre_capital.py
 * Fix a minor bug in draw_capital.py
