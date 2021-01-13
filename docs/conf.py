@@ -6,16 +6,17 @@
 
 # -- Path setup --------------------------------------------------------------
 
-import sphinx_rtd_theme
 import os
 import sys
+from pathlib import Path
 from datetime import datetime
+import sphinx_rtd_theme
 
 #sys.path.insert(0, os.path.abspath('../'))
-#sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath('.')), 'capital'))
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath('.')), 'capital', 'tl'))
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath('.')), 'capital', 'pl'))
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath('.')), 'capital', 'dataset'))
+# HERE is folder docs
+# HERE.parent is top of the directory
+HERE = Path(__file__).parent
+sys.path[:0] = [str(HERE.parent)]
 
 # -- Project information -----------------------------------------------------
 
