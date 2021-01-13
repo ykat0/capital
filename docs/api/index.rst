@@ -9,14 +9,16 @@ API
 .. currentmodule:: capital
 
 Tools for preprocessing
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
+
 .. autosummary::
    :toctree: .
 
    tl.preprocessing
 
 Tools for tree alignment
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. autosummary::
    :toctree: .
 
@@ -26,7 +28,9 @@ Tools for tree alignment
    tl.dpt
 
 Calculate gene similarity
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 .. autosummary::
    :toctree: .
 
@@ -37,7 +41,7 @@ Calculate gene similarity
 .. currentmodule:: capital
 
 Plotting
---------
+~~~~~~~~~
 .. autosummary::
    :toctree: .
 
@@ -47,14 +51,14 @@ Plotting
    pl.gene_expression_trend
 
 Read
------
+~~~~~~
 .. autosummary::
    :toctree: .
 
    tl.read_capital_data
 
 Dataset
---------
+~~~~~~~~~
 .. autosummary::
    :toctree: .
 
