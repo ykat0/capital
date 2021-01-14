@@ -1,7 +1,9 @@
-.. CAPITAL documentation master file, created by
-   sphinx-quickstart on Fri Nov 27 19:43:14 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. image:: https://badge.fury.io/py/capital.svg
+   :target: https://badge.fury.io/py/capital
+
+.. image:: https://readthedocs.org/projects/capital/badge/?version=latest
+   :target: https://capital.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
 
 CAPITAL - Comparative pseudotime analysis of single-cell RNA-seq data
 ========================================================================
