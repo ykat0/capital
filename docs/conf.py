@@ -19,10 +19,10 @@ import capital
 # -- Project information -----------------------------------------------------
 
 project = 'CAPITAL'
-author = 'Reiichi Sugihara, Yuki Kato, Tomoya Mori, Yukio Kawahara'
+author = capital.__author__
 copyright = f'{datetime.now():%Y}, {author}'
 release = '1.0.0'
-version = '1.0.0'
+version = capital.__version__
 
 # -- General configuration ---------------------------------------------------
 
