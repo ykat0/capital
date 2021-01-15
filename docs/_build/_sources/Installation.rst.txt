@@ -1,7 +1,0 @@
-Installation
-============
-
-You can install CAPITAL from PyPI::
-
-    pip install capital
-
