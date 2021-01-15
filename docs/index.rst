@@ -5,6 +5,7 @@
    :target: https://capital.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
+
 CAPITAL - Comparative pseudotime analysis of single-cell RNA-seq data
 ========================================================================
 
