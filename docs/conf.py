@@ -20,7 +20,8 @@ import capital
 
 project = 'CAPITAL'
 author = capital.__author__
-copyright = f'{datetime.now():%Y}, {author}'
+#copyright = f'{datetime.now():%Y}, {author}'
+copyright = f'{datetime.now():%Y}'
 release = '1.0.0'
 version = capital.__version__
 
