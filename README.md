@@ -5,12 +5,12 @@
 
 ### Comparative pseudotime analysis of single-cell RNA-seq data
 
-Last updated: 2021-01-13
+Last updated: 2021-03-03
 
 We present CAPITAL, a computational method for comparing pseudotime trajectories with tree alignment whereby trajectories including branchings can be automatically compared.
 
 ## Installation
-* CAPITAL (ver. 1.0.0) in Python
+* CAPITAL (ver. 1.0.1) in Python
 
 ### Requirements
 * Python>=3.8 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
@@ -24,7 +24,7 @@ We present CAPITAL, a computational method for comparing pseudotime trajectories
 * networkx>=2.3
 * pandas>=0.21
 * pydot
-* scanpy>=1.6
+* scanpy==1.6
 * scikit-learn
 * scipy>=1.4
 * scprep
