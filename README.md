@@ -43,16 +43,3 @@ $ pip install capital
 
 ## Usage
 Read the [documentation](https://capital.readthedocs.io/en/latest/). CAPITAL uses a single-cell analysis toolkit [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) in its implementation so that one can also use Scanpy's useful functions including preprocessing, plotting and datasets in the CAPITAL environment.
-
-## Reference
-Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
-**Alignment of time-course single-cell RNA-seq data with CAPITAL**,
-Preprint *bioRxiv* at [https://doi.org/10.1101/859751](https://doi.org/10.1101/859751), 2019.
-
-Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
-**Comparative pseudotime analysis of single-cell RNA-seq data with CAPITAL**,
-*submitted*.
-
----
-If you have any questions, please contact [Yuki Kato](http://www.med.osaka-u.ac.jp/pub/rna/ykato/en/).
-*Graduate School of Medicine, Osaka University, Japan*
