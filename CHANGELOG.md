@@ -1,5 +1,8 @@
 # Changelog
 
+## Ver. 1.0.1 (2021-03-03)
+* Specify the Scanpy version as 1.6 for pip installation to guarantee the reproducibility of results
+
 ## Ver. 1.0.0 (2021-01-13)
 * Provide a brand new system so that one can use CAPITAL interactively, which is useful for the interactive development environment JupyterLab
 * Upload CAPITAL to PyPI to install it via 'pip' command
