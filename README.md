@@ -3,9 +3,9 @@
 
 # CAPITAL
 
-### Comparative pseudotime analysis of single-cell RNA-seq data
+## Comparative pseudotime analysis of single-cell RNA-seq data
 
-Last updated: 2021-03-03
+Last updated: 2021-03-16
 
 We present CAPITAL, a computational method for comparing pseudotime trajectories with tree alignment whereby trajectories including branchings can be automatically compared.
 

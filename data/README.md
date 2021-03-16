@@ -1,6 +1,6 @@
 # Datasets tailored for CAPITAL
 
-Last updated: 2021-01-08
+Last updated: 2021-03-16
 
 ## Synthetic datasets generated with dyngen
 * Available on this page.
@@ -8,12 +8,4 @@ Last updated: 2021-01-08
 ## Human bone marrow cells
 * Processed Setty et al's dataset is available [HERE](http://www.med.osaka-u.ac.jp/pub/rna/ykato/project/capital/).
 * Processed Velten et al's dataset is available on this page.
-
-## Reference
-Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
-**Alignment of time-course single-cell RNA-seq data with CAPITAL**,
-Preprint *bioRxiv* at [https://doi.org/10.1101/859751](https://doi.org/10.1101/859751), 2019.
-
----
-If you have any questions, please contact [Yuki Kato](http://www.med.osaka-u.ac.jp/pub/rna/ykato/en/)  
-*Graduate School of Medicine, Osaka University, Japan*
+* Processed Paul et al's dataset is available on this page.
