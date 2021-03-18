@@ -14,7 +14,7 @@ def setty19(
     ----------
     fpath : str
         If a path is specified as `str`, the dataset is saved in the path.
-        If `None`, the dataset is saved in `./capital_dataset`, by default `None`.
+        If `None`, the dataset is saved in `../data/capital_dataset`, by default `None`.
 
     Returns
     -------
@@ -26,7 +26,7 @@ def setty19(
     if fpath:
         download_filepath = fpath
     else:
-        download_filepath = "./capital_dataset/setty19_capital.h5ad"
+        download_filepath = "../data/capital_dataset/setty19_capital.h5ad"
 
     os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
 
@@ -50,7 +50,7 @@ def paul15(
     ----------
     fpath : str
         If a path is specified as `str`, the dataset is saved in the path.
-        If `None`, the dataset is saved in `./capital_dataset`, by default `None`.
+        If `None`, the dataset is saved in `../data/capital_dataset`, by default `None`.
 
     Returns
     -------
@@ -62,7 +62,7 @@ def paul15(
     if path:
         download_filepath = fpath
     else:
-        download_filepath = "./capital_dataset/paul15_capital.h5ad"
+        download_filepath = "../data/capital_dataset/paul15_capital.h5ad"
 
     os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
 
@@ -85,7 +85,7 @@ def velten17(
     ----------
     fpath : str
         If a path is specified as `str`, the dataset is saved in the path.
-        If `None`, the dataset is saved in `./capital_dataset`, by default `None`.
+        If `None`, the dataset is saved in `../data/capital_dataset`, by default `None`.
 
     Returns
     -------
@@ -97,7 +97,7 @@ def velten17(
     if fpath:
         download_filepath = fpath
     else:
-        download_filepath = "./capital_dataset/velten17_capital.h5ad"
+        download_filepath = "../data/capital_dataset/velten17_capital.h5ad"
 
     os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
 
@@ -121,7 +121,7 @@ def synthetic_dataset1(
     ----------
     fpath : str
         If a path is specified as `str`, the dataset is saved in the path.
-        If `None`, the dataset is saved in `./capital_dataset`, by default `None`.
+        If `None`, the dataset is saved in `../data/capital_dataset`, by default `None`.
 
     Returns
     -------
@@ -133,7 +133,7 @@ def synthetic_dataset1(
     if fpath:
         download_filepath = fpath
     else:
-        download_filepath = "./capital_dataset/synthetic_dataset1_capital.h5ad"
+        download_filepath = "../data/capital_dataset/synthetic_dataset1_capital.h5ad"
 
     os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
 
@@ -157,7 +157,7 @@ def synthetic_dataset2(
     ----------
     fpath : str
         If a path is specified as `str`, the dataset is saved in the path.
-        If `None`, the dataset is saved in `./capital_dataset`, by default `None`.
+        If `None`, the dataset is saved in `../data/capital_dataset`, by default `None`.
 
     Returns
     -------
@@ -169,7 +169,7 @@ def synthetic_dataset2(
     if fpath:
         download_filepath = fpath
     else:
-        download_filepath = "./capital_dataset/synthetic_dataset2_capital.h5ad"
+        download_filepath = "../data/capital_dataset/synthetic_dataset2_capital.h5ad"
 
     os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
 

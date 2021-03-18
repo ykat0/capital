@@ -45,14 +45,14 @@ class CapitalData:
         Parameters
         ----------
         dirname : str,
-            Path to the directory, if `None`, saves in `./capital_data/`, by default None
+            Path to the directory, if `None`, saves in `../results/cdata`, by default None
         adata1_name : str
             File name of adata1, by default None
         adata2_name : str
             File name of adata2, by default None
         """
         if dirname is None:
-            dirname = "./capital_data/"
+            dirname = "../results/cdata"
         os.makedirs(dirname, exist_ok=True)
 
         adata1_filename = adata1_name if adata1_name is not None else "adata1.h5ad"
