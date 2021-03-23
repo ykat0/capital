@@ -1,5 +1,8 @@
 # Changelog
 
+## Ver. 1.0.2 (2021-03-16)
+* Fine-tune codes to the Code Ocean compute capsule, changing the locations of directories for saving results
+
 ## Ver. 1.0.1 (2021-03-03)
 * Specify the Scanpy version as 1.6 for pip installation to guarantee the reproducibility of results
 
