@@ -17,14 +17,14 @@ We present CAPITAL, a computational method for comparing pseudotime trajectories
 * anndata>=0.7.4
 * graphtools
 * graphviz
-* h5py<=2.10
+* h5py>=2.10
 * leidenalg
 * magic-impute
 * matplotlib>=3.1.2
 * networkx>=2.3
 * pandas>=0.21
 * pydot
-* scanpy==1.6
+* scanpy==1.7
 * scikit-learn
 * scipy>=1.4
 * scprep
