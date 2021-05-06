@@ -455,7 +455,7 @@ def trajectory_tree(
         plt.close()
     else:
         plt.close()
-        return fig
+
 
 
 def tree_alignment(
