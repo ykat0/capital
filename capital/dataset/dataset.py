@@ -59,7 +59,7 @@ def paul15(
 
     URL = "https://github.com/ykat0/capital/raw/master/data/paul2015_magic_n500_k10_r7.h5ad"
 
-    if path:
+    if fpath:
         download_filepath = fpath
     else:
         download_filepath = "../data/capital_dataset/paul15_capital.h5ad"
