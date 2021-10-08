@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 1.0.3 (2021-10-08)
+* Update the Scanpy version as 1.8.1
+* Fix minor bugs
+
 ## Ver. 1.0.2 (2021-03-16)
 * Fine-tune codes to the Code Ocean compute capsule, changing the locations of directories for saving results
 
@@ -13,7 +17,7 @@
 * Upload datasets used in our work, which are available via CAPITAL's dataset functions
 * Improve running time
 * Fix minor bugs
-* Move early versions of CAPITAL to "legacy" directory 
+* Move early versions of CAPITAL to "legacy" directory
 
 ## Ver. 0.2.3 (2020-11-13)
 * Add '--magic' option to impute gene expression data with [MAGIC](https://magic.readthedocs.io/en/stable/) in pre_capital.py
@@ -91,7 +95,7 @@
 
 ## Ver. 0.1.3 (2020-02-02)
 
-* Add further explanations to help messages in pre_capital.py and draw_capital.py 
+* Add further explanations to help messages in pre_capital.py and draw_capital.py
 
 ## Ver. 0.1.2 (2020-01-31)
 
