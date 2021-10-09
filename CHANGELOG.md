@@ -1,7 +1,7 @@
 # Changelog
 
 ## Ver. 1.0.3 (2021-10-08)
-* Update the Scanpy version as 1.8.1
+* Adjust CAPITAL codes to the recent Scanpy update to 1.8.1
 * Fix minor bugs
 
 ## Ver. 1.0.2 (2021-03-16)
