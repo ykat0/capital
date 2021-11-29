@@ -23,6 +23,8 @@ def dtw(
     heightspace: float = 0.30,
     fontsize: float = 12,
     legend_fontsize: float = 12,
+    ticksize: float = 12,
+    linecolor: str = 'grey',
     dpi: int = 600,
     show: bool = True,
     save: Union[str, bool] = False,
@@ -52,6 +54,10 @@ def dtw(
         Font size of the title, by default 12.
     legend_fontsize : float, optional
         Font size of the legend, by default 12.
+    ticksize : float, optional
+        Tick size of the x-axis, by default 12.
+    linecolor: str
+        Color of lines that connect the cells between data1 and data2.
     show : bool,
         If `True`, show the figure. If `False`, return the figure, by default `True`.
     save : Union[str, bool]
@@ -93,12 +99,13 @@ def dtw(
             labelbottom=True,
             labelleft=False,
             labelright=False,
-            labeltop=False)
-        ax.tick_params(
+            labeltop=False,
             bottom=False,
             left=False,
             right=False,
-            top=False)
+            top=False,
+            labelsize=ticksize
+            )
         ax.grid(False)
 
         y1 = data1[ordered_cells1, :].obs["{}_dpt_pseudotime".format(alignment)]
@@ -185,7 +192,7 @@ def dtw(
             i = int(i)
             j = int(j)
             ax.plot((y1[i], y2[j]), (1, 0),
-                    color='grey', alpha=0.5, zorder=-3)
+                    color=linecolor, alpha=0.5, zorder=-3)
 
         ax.set_rasterization_zorder(-1)
 
@@ -213,9 +220,16 @@ def gene_expression_trend(
     switch_psedotime: bool = False,
     data1_name: Optional[str] = "data1",
     data2_name: Optional[str] = "data2",
+    data1_color: str = "tomato",
+    data2_color: str = "lightskyblue",
+    data1_line_color: str = "red",
+    data2_line_color: str = "blue",
     ncols: int = 2,
     widthspace: float = 0.5,
     heightspace: float = 0.30,
+    fontsize: float = 12,
+    legend_fontsize: float = 12,
+    ticksize: float = 12,
     dpi: int = 600,
     show: bool = True,
     save: Union[str, bool] = False,
@@ -241,12 +255,26 @@ def gene_expression_trend(
         Text of data1's legend, by default "data1".
     data2_name : Optional[str]
         Text of data2's legend, by default "data2".
+    data1_color: str
+        Color of data1 scatter plot, by default "tomato".
+    data2_color: str
+        Color of data2 scatter plot, by default "lightskyblue".
+    data1_line_color: str
+        Color of data1 line that are calculated using polynomial curve fitting, by default "red".
+    data2_line_color: str
+        Color of data2 line that are calculated using polynomial curve fitting, by default "blue".
     ncols : int
         Number of panels per row, by default 2.
     widthspace : float
         Width of space in the panels, by default 0.5.
     heightspace : float
         Height of space in the panels, by default 0.30.
+    fontsize : float
+        Font size of the title, by default 12.
+    legend_fontsize : float, optional
+        Font size of the legend, by default 12.
+    ticksize : float, optional
+        Tick size of the axes, by default 12.
     show : bool
         If `True`, show the figure. If `False`, return the figure, by default `True`.
     save : Union[str, bool]
@@ -275,8 +303,9 @@ def gene_expression_trend(
         ordered_cells2 = dtw_dic[genename]["ordered_cells2"]
 
         ax.set_title("{}, {}".format(alignment, genename))
-        ax.set_xlabel("Pseudotime")
-        ax.set_ylabel("Expression level")
+        ax.set_xlabel("Pseudotime",fontsize=fontsize)
+        ax.set_ylabel("Expression level", fontsize=fontsize)
+        ax.tick_params(labelsize=ticksize)
 
         pseudotime = []
         data1_expression_level = []
@@ -341,21 +370,21 @@ def gene_expression_trend(
             array2_poly1d[0])
 
         ax.scatter(array[0], array[1],
-                    color="tomato", alpha=0.5, rasterized=True)
+                    color=data1_color, alpha=0.5, rasterized=True)
         ax.scatter(array[0], array[2],
-                    color="lightskyblue", alpha=0.5, rasterized=True)
+                    color=data2_color, alpha=0.5, rasterized=True)
 
         if data1_name is None:
-            ax.plot(array1_poly1d[0], y1, color="red")
+            ax.plot(array1_poly1d[0], y1, color=data1_line_color)
         else:
             ax.plot(array1_poly1d[0], y1,
-                    color="red", label=data1_name)
+                    color=data1_line_color, label=data1_name)
 
         if data2_name is None:
-            ax.plot(array2_poly1d[0], y2, color="blue")
+            ax.plot(array2_poly1d[0], y2, color=data2_line_color)
         else:
             ax.plot(array2_poly1d[0], y2,
-                    color="blue", label=data2_name)
+                    color=data2_line_color, label=data2_name)
 
         if data1_name is None and data2_name is None:
             pass
