@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 1.0.4 (2021-12-03)
+* Add some new argument in plotting.
+* Fix minor bugs
+
 ## Ver. 1.0.3 (2021-10-08)
 * Adjust CAPITAL codes to the recent Scanpy update to 1.8.1
 * Fix minor bugs
