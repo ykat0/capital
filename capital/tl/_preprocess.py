@@ -315,12 +315,16 @@ class Preprocessing:
 
         else:
             if type(tree) is nx.DiGraph:
-                root_node_tmp = nx.topological_sort(tree)[0]
-                if root_node_tmp != root_node:
-                    raise ValueError("root node of tree and passed argument 'root_node' did not match.")
-                else:
-                    root_node = root_node_tmp
-                postorder, successors = self._set_postorder_successors(tree, root_node)
+                root_node_from_tree = list(nx.topological_sort(tree))[0]
+                if root_node is None:
+                    root_node = root_node_from_tree
+                    postorder, successors = self._set_postorder_successors(tree, root_node)
+                elif root_node is not None:
+                    if root_node_from_tree == root_node:
+                        postorder, successors = self._set_postorder_successors(tree, root_node)
+                    else:
+                        raise ValueError("root node of tree and passed argument 'root_node' did not match.")
+
             elif type(tree) is nx.Graph and root_node is not None:
                 tree = nx.dfs_tree(tree, root_node)
                 postorder, successors = self._set_postorder_successors(tree, root_node)
