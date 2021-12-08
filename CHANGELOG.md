@@ -1,7 +1,7 @@
 # Changelog
 
 ## Ver. 1.0.4 (2021-12-03)
-* Add some new argument in plotting.
+* Add some new arguments in plotting
 * Fix minor bugs
 
 ## Ver. 1.0.3 (2021-10-08)
