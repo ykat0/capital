@@ -3,7 +3,7 @@
 
 # CAPITAL
 
-## Comparative pseudotime analysis of single-cell RNA-seq data
+## Alignment of single-cell trajectory trees
 
 Last updated: 2021-12-03
 
