@@ -1,4 +1,4 @@
-[![PyPI version](https://badge.fury.io/py/capital.svg)](https://badge.fury.io/py/capital)
+[![PyPI version](https://badge.fury.io/py/capital.png)](https://badge.fury.io/py/capital)
 [![Documentation Status](https://readthedocs.org/projects/capital/badge/?version=latest)](https://capital.readthedocs.io/en/latest/?badge=latest)
 
 # CAPITAL

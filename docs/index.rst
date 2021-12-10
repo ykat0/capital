@@ -1,4 +1,4 @@
-.. image:: https://badge.fury.io/py/capital.svg
+.. image:: https://badge.fury.io/py/capital.png
    :target: https://badge.fury.io/py/capital
 
 .. image:: https://readthedocs.org/projects/capital/badge/?version=latest
