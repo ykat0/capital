@@ -1,6 +1,9 @@
-.. image:: https://badge.fury.io/py/capital.png
+.. image:: https://badge.fury.io/py/capital.svg
    :target: https://badge.fury.io/py/capital
 
+.. image:: https://readthedocs.org/projects/capital/badge/?version=latest
+:target: https://capital.readthedocs.io/en/latest/?badge=latest
+:alt: Documentation Status
 
 CAPITAL - Alignment of single-cell trajectory trees
 ========================================================================
