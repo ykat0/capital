@@ -1,4 +1,4 @@
 -r ../requirements.txt
 nbsphinx
 ipython
-librsvg
+sphinxcontrib-svg2pdfconverter
