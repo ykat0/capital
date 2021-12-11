@@ -14,7 +14,7 @@ We present CAPITAL, a computational method for comparing pseudotime trajectories
 .. See also code development in `GitHub <https://github.com/ykat0/capital>`_.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    Installation
    tutorials/index
