@@ -62,7 +62,7 @@ class Tree_Alignment:
             adata1.copy(),
             adata2.copy(),
             alignedtree,
-            np.array([self.__alignmentcost], dtype=int),
+            np.array([self.__alignmentcost], dtype=float),
             np.array(gene_list, dtype=object),
             alignmentdict,
         )
