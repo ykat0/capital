@@ -773,6 +773,6 @@ class Tree_Alignment:
         alignmentcost = self.__treedistance.loc[self.__postorder1[-1],
                                                 self.__postorder2[-1]]
 
-        self.__alignmentcost = alignmentcost/len(G)
+        self.__alignmentcost = alignmentcost
 
         return G
