@@ -22,7 +22,7 @@ project = 'CAPITAL'
 author = capital.__author__
 # copyright = f'{datetime.now():%Y}, {author}'
 copyright = f'{datetime.now():%Y}'
-release = '1.0.4'
+release = '1.0.5'
 version = capital.__version__
 
 # -- General configuration ---------------------------------------------------

@@ -28,11 +28,16 @@ def setty19(
     else:
         download_filepath = "../data/capital_dataset/setty19_capital.h5ad"
 
-    os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
+    if os.path.exists(download_filepath):
+        print(f"The dataset already exist in {download_filepath}.")
+        print(f"Reading datasets from {download_filepath}.")
+        adata = sc.read(download_filepath)
 
-    print("Downloading the dataset.")
-    adata = sc.read(download_filepath, backup_url=URL)
-    print("Download completed. The dataset is saved in {}".format(download_filepath))
+    else:
+        os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
+        print("Downloading the dataset.")
+        adata = sc.read(download_filepath, backup_url=URL)
+        print("Download completed. The dataset is saved in {}".format(download_filepath))
 
     return adata
 
@@ -64,11 +69,16 @@ def paul15(
     else:
         download_filepath = "../data/capital_dataset/paul15_capital.h5ad"
 
-    os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
+    if os.path.exists(download_filepath):
+        print(f"The dataset already exist in {download_filepath}.")
+        print(f"Reading datasets from {download_filepath}.")
+        adata = sc.read(download_filepath)
 
-    print("Downloading the dataset.")
-    adata = sc.read(download_filepath, backup_url=URL)
-    print("Download completed. The dataset is saved in {}".format(download_filepath))
+    else:
+        os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
+        print("Downloading the dataset.")
+        adata = sc.read(download_filepath, backup_url=URL)
+        print("Download completed. The dataset is saved in {}".format(download_filepath))
 
     return adata
 
@@ -99,82 +109,15 @@ def velten17(
     else:
         download_filepath = "../data/capital_dataset/velten17_capital.h5ad"
 
-    os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
+    if os.path.exists(download_filepath):
+        print(f"The dataset already exist in {download_filepath}.")
+        print(f"Reading datasets from {download_filepath}.")
+        adata = sc.read(download_filepath)
 
-    print("Downloading the dataset.")
-    adata = sc.read(download_filepath, backup_url=URL)
-    print("Download completed. The dataset is saved in {}".format(download_filepath))
-
-    return adata
-
-
-def synthetic_dataset1(
-    fpath: str = None
-):
-    """
-    One of the preprocessed synthetic datasets genereted using `dyngen <https://www.biorxiv.org/content/10.1101/2020.02.06.936971v3>`_ \
-    used in our work.
-    The other synthetic dataset is in `cp.dataset.synthetic_dataset2()`.
-    This downloads the dataset from `here <https://github.com/ykat0/capital/tree/master/data>`__.
-
-    Parameters
-    ----------
-    fpath : str
-        If a path is specified as `str`, the dataset is saved in the path.
-        If `None`, the dataset is saved in `../data/capital_dataset`, by default `None`.
-
-    Returns
-    -------
-    An :class:`~anndata.AnnData` object
-    """
-
-    URL = "https://github.com/ykat0/capital/raw/master/data/dyngen_data1_n100_k100_r5.h5ad"
-
-    if fpath:
-        download_filepath = fpath
     else:
-        download_filepath = "../data/capital_dataset/synthetic_dataset1_capital.h5ad"
-
-    os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
-
-    print("Downloading the dataset.")
-    adata = sc.read(download_filepath, backup_url=URL)
-    print("Download completed. The dataset is saved in {}".format(download_filepath))
-
-    return adata
-
-
-def synthetic_dataset2(
-    fpath: str = None
-):
-    """
-    One of the preprocessed synthetic datasets genereted using `dyngen <https://www.biorxiv.org/content/10.1101/2020.02.06.936971v3>`_ \
-    used in our work.
-    The other synthetic dataset is in `cp.dataset.synthetic_dataset1()`.
-    This downloads the dataset from `here <https://github.com/ykat0/capital/tree/master/data>`__.
-
-    Parameters
-    ----------
-    fpath : str
-        If a path is specified as `str`, the dataset is saved in the path.
-        If `None`, the dataset is saved in `../data/capital_dataset`, by default `None`.
-
-    Returns
-    -------
-    An :class:`~anndata.AnnData` object
-    """
-
-    URL = "https://github.com/ykat0/capital/raw/master/data/dyngen_data2_n100_k100_r4.h5ad"
-
-    if fpath:
-        download_filepath = fpath
-    else:
-        download_filepath = "../data/capital_dataset/synthetic_dataset2_capital.h5ad"
-
-    os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
-
-    print("Downloading the dataset.")
-    adata = sc.read(download_filepath, backup_url=URL)
-    print("Download completed. The dataset is saved in {}".format(download_filepath))
+        os.makedirs(os.path.dirname(download_filepath), exist_ok=True)
+        print("Downloading the dataset.")
+        adata = sc.read(download_filepath, backup_url=URL)
+        print("Download completed. The dataset is saved in {}".format(download_filepath))
 
     return adata
