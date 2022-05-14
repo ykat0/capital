@@ -1,8 +1,8 @@
 # Changelog
 
-## Ver. 1.0.4 (2022-05-14)
+## Ver. 1.0.5 (2022-05-14)
 * Fix minor bugs
-* Deleted synthetic_dataset1 and synthetic_dataset2 from capital.dataset function.
+* Delete synthetic_dataset1 and synthetic_dataset2 from capital.dataset function.
 
 ## Ver. 1.0.4 (2021-12-03)
 * Add some new arguments in plotting
