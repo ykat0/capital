@@ -9,7 +9,7 @@ networkx>=2.3
 numpy>=1.17.0
 pandas>=0.21
 pydot
-scanpy==1.8.1
+scanpy==1.9.1
 scikit-learn
 scipy>=1.4
 scprep
