@@ -1,5 +1,11 @@
 # Changelog
 
+## Ver. 1.0.7 (2022-05-15)
+* Fix minor bugs
+
+## Ver. 1.0.6 (2022-05-15)
+* Fix compatibility with scanpy 1.9.1
+
 ## Ver. 1.0.5 (2022-05-14)
 * Fix minor bugs
 * Delete synthetic_dataset1 and synthetic_dataset2 from capital.dataset function.
