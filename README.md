@@ -33,12 +33,14 @@ We present CAPITAL, a computational method for comparing pseudotime trajectories
 ### Install on Linux, Windows (WSL) and macOS
 Create a new environment for CAPITAL (recommended):
 ```
-$ conda create -n capital python=3.9 graphviz
+conda create -n capital python=3.9 graphviz
 ```
 Next, activate the environment and pull CAPITAL from PyPI:
 ```
-$ conda activate capital
-$ pip install capital
+conda activate capital
+```
+```
+pip install capital
 ```
 
 ## Usage
