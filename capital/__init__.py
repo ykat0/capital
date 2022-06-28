@@ -8,7 +8,7 @@ import warnings
 warnings.simplefilter('ignore', FutureWarning)
 
 __copyright__ = 'Copyright (C) 2021 Reiichi Sugihara, Yuki Kato, Tomoya Mori, Yukio Kawahara'
-__version__ = '1.0.7'
+__version__ = '1.0.8'
 __license__ = 'BSD-3-Clause'
 __author__ = 'Reiichi Sugihara, Yuki Kato, Tomoya Mori, Yukio Kawahara'
 __author_email__ = 'reiichi.sugihara@gmail.com'

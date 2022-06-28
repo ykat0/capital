@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 1.0.8 (2022-06-28)
+* Specify the Networkx version as 2.8.3, due to the errors in plotting figures.
+* Fix minor bugs
+
 ## Ver. 1.0.7 (2022-05-15)
 * Fix minor bugs
 

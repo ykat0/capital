@@ -5,12 +5,12 @@
 
 ## Alignment of single-cell trajectory trees
 
-Last updated: 2022-06-22
+Last updated: 2022-06-28
 
 We present CAPITAL, a computational method for comparing pseudotime trajectories with tree alignment whereby trajectories including branches can be automatically compared.
 
 ## Installation
-* CAPITAL (ver. 1.0.7) in Python
+* CAPITAL (ver. 1.0.8) in Python
 
 ### Requirements
 * Python>=3.8 ([Miniconda](https://docs.conda.io/en/latest/miniconda.html) is recommended)
@@ -21,7 +21,7 @@ We present CAPITAL, a computational method for comparing pseudotime trajectories
 * leidenalg
 * magic-impute
 * matplotlib>=3.1.2
-* networkx>=2.3
+* networkx==2.8.3
 * pandas>=0.21
 * pydot
 * scanpy==1.9.1
