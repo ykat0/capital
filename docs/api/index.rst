@@ -24,8 +24,8 @@ Tools for tree alignment
 
    tl.trajectory_tree
    tl.tree_alignment
-   tl.dtw
    tl.dpt
+   tl.dtw
 
 Calculate gene similarity
 ~~~~~~~~~~~~~~~~~~~~~~~~~

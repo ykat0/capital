@@ -365,7 +365,8 @@ def dpt(
 def dtw(
     aligned_data: CapitalData,
     gene: Union[str, list, np.ndarray],
-    alignment: Union[str, list, None] = None
+    alignment: Union[str, list, None] = None,
+    all_genes=False,
 ):
     """\
     Calculate dynamic time warping for genes.
@@ -381,6 +382,11 @@ def dtw(
     alignment : Union[str, list, None]
         Specify which alignment is used to calculate dynamic time warping.
         If `None`, it calculates dynamic time warping for all the alignments, by default `None`.
+    all_genes : bool
+        If True, compute dynamic time warping using all genes in argument gene and 
+        return matched cells in cdata.alignmnetdict['alignmentid']['all_genes'].
+        If False, compute dynamic time warping for each gene. By defalut False.  
+
     """
 
     if not isinstance(aligned_data, CapitalData):
