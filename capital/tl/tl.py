@@ -401,7 +401,8 @@ def dtw(
     dtw.dtw_for_alignments(
         aligned_data,
         gene,
-        alignment=alignment
+        alignment=alignment,
+        all_genes=all_genes
     )
 
 
