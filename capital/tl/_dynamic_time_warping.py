@@ -10,6 +10,34 @@ class DPT:
     def __init__(self):
         pass
 
+    def _calc_root_cell(
+        self,
+        adata,
+    ):
+        if not isinstance(adata.X, np.ndarray):
+            X = adata.X.toarray()
+        
+        else:
+            X = adata.X
+
+        root_cluster = adata.uns['capital']['tree']['root_node']
+        groupby = adata.uns["capital"]["tree"]["annotation"]
+
+        # Choose the root cell
+        Y = pdist(X, "euclidean")
+        distancearray = squareform(Y)
+
+        distancearray = np.sum(distancearray, axis=1)
+        loc = np.argsort(distancearray)
+        count = 0
+
+        while adata.obs[groupby][np.where(loc == count)[0][0]] != root_cluster:
+            count += 1
+
+        # Store the root cell id
+        root_cell = adata.obs.index[np.flatnonzero(adata.obs[groupby])[np.where(loc == count)[0][0]]]
+        adata.uns["root_cell"] = root_cell
+
     def _dpt_for_an_alignment(
         self,
         adata,
@@ -25,26 +53,14 @@ class DPT:
         adata_dpt = adata[adata.obs[groupby].isin(
             cluster_list)].copy()
 
-        if not isinstance(adata.X, np.ndarray):
-            X = adata_dpt.X.toarray()
-        else:
-            X = adata_dpt.X
+        # Choose cells only in "clusters"
+        adata_dpt = adata[adata.obs[groupby].isin(cluster_list)].copy()
 
-        Y = pdist(X, 'euclidean')
-        distancearray = squareform(Y)
-
-        distancearray = np.sum(distancearray, axis=1)
-        loc = np.argsort(distancearray)
-        count = 0
-        while adata_dpt.obs[groupby][np.where(loc == count)[0][0]] != root_cluster:
-            count += 1
-
-        # "iroot" is a cell that are the source of
-        root_cell = np.flatnonzero(adata_dpt.obs[groupby])[
-            np.where(loc == count)[0][0]]
-        adata_dpt.uns['iroot'] = root_cell
+        # "iroot" is a cell that is the source
+        adata_dpt.uns["iroot"] = adata_dpt.obs.index.get_loc(adata_dpt.uns["root_cell"])
 
         # process diffusion maps and dpt, calculate "dpt_pseudotime"
+        sc.pp.neighbors(adata_dpt)
         sc.tl.diffmap(adata_dpt)
         sc.tl.dpt(adata_dpt)
 
@@ -55,10 +71,8 @@ class DPT:
         each_pseudotime_dict = adata.uns["capital"]["pseudotime"]["{}".format(
             alignment_id)]
         each_pseudotime_dict["clusters"] = np.array(cluster_list, dtype=object)
-        each_pseudotime_dict["iroot"] = root_cell
         # add dpt_pseudotime for the clusters in one alignment to adata.obs["alignment000_dpt_pseudotime"]
         # add clusters name used in the alignment  to adata.uns["capital"]["pseudotime"]["alignment000"]["clusters"]
-        # add cell id of root cell of dpt to adata.uns["capital"]["pseudotime"]["alignment000"]["iroot"]
         return adata if copy else None
 
     def dpt_for_alignments(
@@ -84,6 +98,9 @@ class DPT:
                 raise ValueError(
                     "alignment must be list or str of alignment. "
                     "e.g. 'alignment000' or ['alignment000','alignment001', ...].")
+
+        self._calc_root_cell(aligned_data.adata1)
+        self._calc_root_cell(aligned_data.adata2)
 
         for alignment_id in alignment_id_list:
             route1 = aligned_data.alignmentdict[alignment_id]["data1"]
@@ -126,6 +143,7 @@ class DPT:
                 aligned_data.adata1, cluster_list1, alignment_id)
             self._dpt_for_an_alignment(
                 aligned_data.adata2, cluster_list2, alignment_id)
+
 
 
 class DynamicTimeWarping():
