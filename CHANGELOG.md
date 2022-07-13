@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 1.0.11 (2022-07-14)
+* Change the cp.tl.dpt() to calculate the root cell used in sc.tl.dpt(), using all cells in the dataset and use the root cell for all the alignment. 
+* Fix minor bugs
+
 ## Ver. 1.0.10 (2022-07-05)
 * Fix minor bugs
 
