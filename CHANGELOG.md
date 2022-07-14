@@ -1,7 +1,7 @@
 # Changelog
 
 ## Ver. 1.0.11 (2022-07-14)
-* Change function cp.tl.dpt() to calculate the root cell so that it is derived from all cells in the datasets and used for all linear alignments.
+* Change function cp.tl.dpt() to calculate the root cell so that it is derived from all cells in the datasets and used for all linear alignments
 * Fix minor bugs
 
 ## Ver. 1.0.10 (2022-07-05)
