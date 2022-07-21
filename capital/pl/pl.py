@@ -218,6 +218,7 @@ def gene_expression_trend(
     outliers: list = [100, 0],
     polyfit_dimension: int = 3,
     switch_psedotime: bool = False,
+    all_genes: bool = True,
     data1_name: Optional[str] = "data1",
     data2_name: Optional[str] = "data2",
     data1_color: str = "tomato",
@@ -251,6 +252,8 @@ def gene_expression_trend(
         Degree of the fitting polynomial, by default 3.
     switch_psedotime : bool, optional
         If `False`, data1's pseudotime is used to plot two expression trends. If `True`, switch it to data2's pseudotime, by default `False`.
+    all_genes : bool
+        If `True`, figures are plotted using the cell-cell match of cp.tl.dtw(all_genes=True), by default `False`.
     data1_name : Optional[str]
         Text of data1's legend, by default "data1".
     data2_name : Optional[str]
@@ -298,10 +301,15 @@ def gene_expression_trend(
     for count, (alignment, genename) in enumerate(plot_list):
         ax = fig.add_subplot(grid[count])
         dtw_dic = aligned_data.alignmentdict[alignment]
-        path = dtw_dic[genename]["path"]
-        ordered_cells1 = dtw_dic[genename]["ordered_cells1"]
-        ordered_cells2 = dtw_dic[genename]["ordered_cells2"]
-
+        if all_genes:
+            path = dtw_dic["all_genes"]["path"]
+            ordered_cells1 = dtw_dic["all_genes"]["ordered_cells1"]
+            ordered_cells2 = dtw_dic["all_genes"]["ordered_cells2"]
+        else:
+            path = dtw_dic[genename]["path"]
+            ordered_cells1 = dtw_dic[genename]["ordered_cells1"]
+            ordered_cells2 = dtw_dic[genename]["ordered_cells2"]
+            
         ax.set_title("{}, {}".format(alignment, genename))
         ax.set_xlabel("Pseudotime",fontsize=fontsize)
         ax.set_ylabel("Expression level", fontsize=fontsize)
@@ -410,7 +418,6 @@ def gene_expression_trend(
     else:
         plt.close()
         return fig
-
 
 
 def trajectory_tree(
