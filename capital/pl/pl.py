@@ -547,7 +547,8 @@ def tree_alignment(
     else:
         plt.close()
     plt.close()
-
+    
+    
 def __panel(
     ncols,
     num_panels,
@@ -576,7 +577,8 @@ def __panel(
 def __set_plot_list(
     aligned_data,
     alignment,
-    gene
+    genes,
+    all_genes = False
 ):
     alignmentlist = []
     if alignment is None:
@@ -599,35 +601,38 @@ def __set_plot_list(
             "Alignments were not found. {}".format(alignment_check)
         )
 
-    if isinstance(gene, list):
-        genenamelist = gene
-    elif isinstance(gene, str):
-        genenamelist = [gene]
-    elif isinstance(gene, np.ndarray):
-        genenamelist = list(gene)
+    if isinstance(genes, list):
+        genenamelist = genes
+    elif isinstance(genes, str):
+        genenamelist = [genes]
+    elif isinstance(genes, np.ndarray):
+        genenamelist = list(genes)
     else:
         raise ValueError("gene must be list, str or np.ndarray.")
 
     plot_list_tmp = list(itertools.product(alignmentlist, genenamelist))
     plot_list = [
         (alignment, gene) for alignment, gene in plot_list_tmp
-        if gene in aligned_data.alignmentdict[alignment]
+        if gene in aligned_data.alignmentdict[alignment] or all_genes
     ]
 
     if len(plot_list) == 0:
         raise ValueError(
             "Genes were not found in alignments. Run capital.dtw() first.")
+        
+    if all_genes:
+        pass
+    else:
+        non_plot_list = [
+            gene + " not in " + alignment for alignment, gene in plot_list_tmp
+            if gene not in aligned_data.alignmentdict[alignment] 
+        ]
 
-    non_plot_list = [
-        gene + " not in " + alignment for alignment, gene in plot_list_tmp
-        if gene not in aligned_data.alignmentdict[alignment]
-    ]
-
-    if len(non_plot_list) > 0:
-        print("The genes below were not found in the alignments. Run capital.dtw() or specify the alignments to draw.")
-        if len(non_plot_list) < 5:
-            print(non_plot_list)
-        else:
-            print("{} and more...".format(non_plot_list[:5]))
-
+        if len(non_plot_list) > 0:
+            print("The genes below were not found in the alignments. Run capital.dtw() or specify the alignments to draw.")
+            if len(non_plot_list) < 5:
+                print(non_plot_list)
+            else:
+                print("{} and more...".format(non_plot_list[:5]))
+    
     return plot_list
