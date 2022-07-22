@@ -5,7 +5,7 @@
 
 ## Alignment of single-cell trajectory trees
 
-Last updated: 2022-07-14
+Last updated: 2022-07-22
 
 We present CAPITAL, a computational method for comparing pseudotime trajectories with tree alignment whereby trajectories including branches can be automatically compared.
 
