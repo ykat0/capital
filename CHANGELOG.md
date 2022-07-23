@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 1.0.12 (2022-07-23)
+* Added `multi_gene` param to capital.pl.gene_expression_trend() and now can plot gene expression trend using results of multi genes caluculated in capital.tl.dtw(). 
+* Fix minor bugs
+
 ## Ver. 1.0.11 (2022-07-14)
 * Change function cp.tl.dpt() to calculate the root cell so that it is derived from all cells in the datasets and used for all linear alignments
 * Fix minor bugs

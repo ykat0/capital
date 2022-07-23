@@ -155,7 +155,7 @@ class DynamicTimeWarping():
         aligned_data: CapitalData,
         gene,
         alignment=None,
-        all_genes=False
+        multi_genes=False
     ):
         groupby1 = aligned_data.adata1.uns["capital"]["tree"]["annotation"]
         groupby2 = aligned_data.adata2.uns["capital"]["tree"]["annotation"]
@@ -195,11 +195,11 @@ class DynamicTimeWarping():
             adata_dpt2 = adata_dpt2[adata_dpt2.obs.sort_values(
                 "{}_dpt_pseudotime".format(alignment_id)).index].copy()
 
-            if all_genes:
+            if multi_genes:
                 ordered_cells1, ordered_cells2, path, dist = self._applying_dtw_to_clusters(
                     adata_dpt1, adata_dpt2, gene)
                 result = aligned_data.alignmentdict[alignment_id]
-                result["all_genes"] = {"ordered_cells1": ordered_cells1,
+                result["multi_genes"] = {"ordered_cells1": ordered_cells1,
                                     "ordered_cells2": ordered_cells2,
                                     "path": path,
                                     }

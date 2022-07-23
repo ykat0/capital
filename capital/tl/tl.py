@@ -366,7 +366,7 @@ def dtw(
     aligned_data: CapitalData,
     gene: Union[str, list, np.ndarray],
     alignment: Union[str, list, None] = None,
-    all_genes=False,
+    multi_genes=False,
 ):
     """\
     Calculate dynamic time warping for genes.
@@ -382,9 +382,9 @@ def dtw(
     alignment : Union[str, list, None]
         Specify which alignment is used to calculate dynamic time warping.
         If `None`, it calculates dynamic time warping for all the alignments, by default `None`.
-    all_genes : bool
+    multi_genes : bool
         If True, compute dynamic time warping using all genes in argument gene and 
-        return matched cells in cdata.alignmnetdict['alignmentid']['all_genes'].
+        return matched cells in cdata.alignmnetdict['alignmentid']['multi_genes'].
         If False, compute dynamic time warping for each gene. By defalut False.  
 
     """
@@ -402,7 +402,7 @@ def dtw(
         aligned_data,
         gene,
         alignment=alignment,
-        all_genes=all_genes
+        multi_genes=multi_genes
     )
 
 

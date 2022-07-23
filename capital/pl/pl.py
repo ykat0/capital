@@ -31,6 +31,7 @@ def dtw(
 ):
     """\
     Plot the results of dynamic time warping.
+    When plotting the result of cp.tl.dtw(multi_genes=True), pass "multi_genes" to argument `gene`.
 
     Parameters
     ----------
@@ -218,7 +219,7 @@ def gene_expression_trend(
     outliers: list = [100, 0],
     polyfit_dimension: int = 3,
     switch_psedotime: bool = False,
-    all_genes: bool = True,
+    multi_genes: bool = True,
     data1_name: Optional[str] = "data1",
     data2_name: Optional[str] = "data2",
     data1_color: str = "tomato",
@@ -252,8 +253,8 @@ def gene_expression_trend(
         Degree of the fitting polynomial, by default 3.
     switch_psedotime : bool, optional
         If `False`, data1's pseudotime is used to plot two expression trends. If `True`, switch it to data2's pseudotime, by default `False`.
-    all_genes : bool
-        If `True`, figures are plotted using the cell-cell match of cp.tl.dtw(all_genes=True), by default `False`.
+    multi_genes : bool
+        If `True`, figures are plotted using the cell-cell match of cp.tl.dtw(multi_genes=True), by default `False`.
     data1_name : Optional[str]
         Text of data1's legend, by default "data1".
     data2_name : Optional[str]
@@ -301,10 +302,10 @@ def gene_expression_trend(
     for count, (alignment, genename) in enumerate(plot_list):
         ax = fig.add_subplot(grid[count])
         dtw_dic = aligned_data.alignmentdict[alignment]
-        if all_genes:
-            path = dtw_dic["all_genes"]["path"]
-            ordered_cells1 = dtw_dic["all_genes"]["ordered_cells1"]
-            ordered_cells2 = dtw_dic["all_genes"]["ordered_cells2"]
+        if multi_genes:
+            path = dtw_dic["multi_genes"]["path"]
+            ordered_cells1 = dtw_dic["multi_genes"]["ordered_cells1"]
+            ordered_cells2 = dtw_dic["multi_genes"]["ordered_cells2"]
         else:
             path = dtw_dic[genename]["path"]
             ordered_cells1 = dtw_dic[genename]["ordered_cells1"]
@@ -578,7 +579,7 @@ def __set_plot_list(
     aligned_data,
     alignment,
     genes,
-    all_genes = False
+    multi_genes = False
 ):
     alignmentlist = []
     if alignment is None:
@@ -613,14 +614,14 @@ def __set_plot_list(
     plot_list_tmp = list(itertools.product(alignmentlist, genenamelist))
     plot_list = [
         (alignment, gene) for alignment, gene in plot_list_tmp
-        if gene in aligned_data.alignmentdict[alignment] or all_genes
+        if gene in aligned_data.alignmentdict[alignment] or multi_genes
     ]
 
     if len(plot_list) == 0:
         raise ValueError(
             "Genes were not found in alignments. Run capital.dtw() first.")
         
-    if all_genes:
+    if multi_genes:
         pass
     else:
         non_plot_list = [
