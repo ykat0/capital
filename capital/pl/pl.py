@@ -289,7 +289,7 @@ def gene_expression_trend(
         ValueError(
             "draw_gene_expression_trend() expects an CapitalData argument.")
 
-    plot_list = __set_plot_list(aligned_data, alignment, gene)
+    plot_list = __set_plot_list(aligned_data, alignment, gene, multi_genes=multi_genes)
 
     data1 = aligned_data.adata1
     data2 = aligned_data.adata2
