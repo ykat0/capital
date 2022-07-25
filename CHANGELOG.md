@@ -4,7 +4,7 @@
 * Fix minor bugs
 
 ## Ver. 1.0.12 (2022-07-23)
-* Added `multi_gene` param to capital.pl.gene_expression_trend() and now can plot gene expression trend using results of multi genes caluculated in capital.tl.dtw(). 
+* Add `multi_gene` parameter to capital.pl.gene_expression_trend() so that users can plot a gene expression trend using results of multi genes calculated in capital.tl.dtw()
 * Fix minor bugs
 
 ## Ver. 1.0.11 (2022-07-14)
