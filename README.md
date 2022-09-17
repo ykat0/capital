@@ -1,5 +1,6 @@
 [![PyPI version](https://badge.fury.io/py/capital.svg)](https://badge.fury.io/py/capital)
 [![Documentation Status](https://readthedocs.org/projects/capital/badge/?version=latest)](https://capital.readthedocs.io/en/latest/?badge=latest)
+[![DOI](https://zenodo.org/badge/221850492.svg)](https://zenodo.org/badge/latestdoi/221850492)
 
 # CAPITAL
 
