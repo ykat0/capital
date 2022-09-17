@@ -55,5 +55,5 @@ Reiichi Sugihara, Yuki Kato*, Tomoya Mori and Yukio Kawahara,
 *in preparation for publication*.
 
 ---
-If you have any questions, please contact [Yuki Kato](https://www.med.osaka-u.ac.jp/pub/rna/ykato/en/index.html)  
-*Graduate School of Medicine, Osaka University, Japan*
+If you have any questions, please contact [Yuki Kato](https://www.med.osaka-u.ac.jp/pub/rna/ykato/en/index.html).  
+*Graduate School of Medicine, Osaka University, Japan*.
