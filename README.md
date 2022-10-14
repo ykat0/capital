@@ -6,7 +6,7 @@
 
 ## Alignment of single-cell trajectory trees
 
-Last updated: 2022-09-17
+Last updated: 2022-10-14
 
 We present CAPITAL, a computational method for comparing pseudotime trajectories with tree alignment whereby trajectories including branches can be automatically compared.
 
@@ -51,9 +51,9 @@ Read the [documentation](https://capital.readthedocs.io/en/latest/). CAPITAL use
 We also provide a Code Ocean [compute capsule](https://codeocean.com/capsule/5673663/tree/v1) to reproduce our results.
 
 ## Reference
-Reiichi Sugihara, Yuki Kato*, Tomoya Mori and Yukio Kawahara,
+Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
 **Alignment of single-cell trajectory trees with CAPITAL**,
-*in preparation for publication*.
+*Nature Communications*, vol. 13, 5972, 2022. [[Link]](https://www.nature.com/articles/s41467-022-33681-3)
 
 ---
 If you have any questions, please contact [Yuki Kato](https://www.med.osaka-u.ac.jp/pub/rna/ykato/en/index.html).  
