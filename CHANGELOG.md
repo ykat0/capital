@@ -1,5 +1,8 @@
 # Changelog
 
+## Ver. 1.0.14 (2022-12-16)
+* Specify the matplotlib version as 3.5.2 due to errors in plotting figures
+
 ## Ver. 1.0.13 (2022-07-23)
 * Fix minor bugs
 
