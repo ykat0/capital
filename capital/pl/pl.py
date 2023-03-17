@@ -16,6 +16,7 @@ def dtw(
     aligned_data: CapitalData,
     gene: Union[str, list],
     alignment: Union[str, list, None] = None,
+    pseudotime: str = None,
     data1_name: Optional[str] = "data1",
     data2_name: Optional[str] = "data2",
     ncols: int = 2,
@@ -41,6 +42,9 @@ def dtw(
         Keys for annotations of genes.
     alignment : Union[str, list, None], optional
         Keys for alignments to be plotted. If `None`, all alignments will be plotted, by default `None`.
+    pseudotime : str
+        Specify name of the column which store user defined pseudotime in cdata.adata1.obs and cdata.adata2.obs. 
+        If `None`, it uses pseudotime calculated in cp.tl.dpt().  By default `None`.
     data1_name : Optional[str], optional
         Text of data1's legend, by default "data1".
     data2_name : Optional[str], optional
@@ -93,6 +97,11 @@ def dtw(
         ordered_cells1 = dtw_dic[genename]["ordered_cells1"]
         ordered_cells2 = dtw_dic[genename]["ordered_cells2"]
 
+        if pseudotime is None:
+            col_pseudotime = f"{alignment}_dpt_pseudotime"
+        else:
+            col_pseudotime = pseudotime
+
         ax.set_title("{}_{}".format(alignment, genename), fontsize=fontsize)
         ax.set_xlabel("Pseudotime", fontsize=fontsize)
         ax.set_aspect(0.8)
@@ -109,8 +118,8 @@ def dtw(
             )
         ax.grid(False)
 
-        y1 = data1[ordered_cells1, :].obs["{}_dpt_pseudotime".format(alignment)]
-        y2 = data2[ordered_cells2, :].obs["{}_dpt_pseudotime".format(alignment)]
+        y1 = data1[ordered_cells1, :].obs[col_pseudotime]
+        y2 = data2[ordered_cells2, :].obs[col_pseudotime]
 
         clusters1 = data1[ordered_cells1, :].obs[groupby1]
         colors1 = data1[ordered_cells1, :].uns[groupby_colors1]
@@ -216,6 +225,7 @@ def gene_expression_trend(
     aligned_data: CapitalData,
     gene: Union[str, list],
     alignment: Union[str, list, None] = None,
+    pseudotime: str = None,
     outliers: list = [100, 0],
     polyfit_dimension: int = 3,
     switch_psedotime: bool = False,
@@ -247,6 +257,9 @@ def gene_expression_trend(
         Keys for annotations of genes.
     alignment : Union[str, list, None], optional
         Keys for alignments to be plotted. If `None`, all alignments will be plotted, by default `None`.
+    pseudotime : str
+        Specify name of the column which store user defined pseudotime in cdata.adata1.obs and cdata.adata2.obs. 
+        If `None`, it uses pseudotime calculated in cp.tl.dpt().  By default `None`.
     outliers : list
         Outliers for gene expression, by default [100, 0].
     polyfit_dimension : int
@@ -310,6 +323,11 @@ def gene_expression_trend(
             path = dtw_dic[genename]["path"]
             ordered_cells1 = dtw_dic[genename]["ordered_cells1"]
             ordered_cells2 = dtw_dic[genename]["ordered_cells2"]
+
+        if pseudotime is None:
+            col_pseudotime = f"{alignment}_dpt_pseudotime"
+        else:
+            col_pseudotime = pseudotime
             
         ax.set_title("{}, {}".format(alignment, genename))
         ax.set_xlabel("Pseudotime",fontsize=fontsize)
@@ -326,11 +344,9 @@ def gene_expression_trend(
         )[ordered_cells2, genename].X.T[0]
 
         if switch_psedotime:
-            pseudotime = data2[ordered_cells2, :].obs["{}_dpt_pseudotime".format(
-                alignment)][[j for _, j in path]].values
+            pseudotime = data2[ordered_cells2, :].obs[col_pseudotime][[j for _, j in path]].values
         else:
-            pseudotime = data1[ordered_cells1, :].obs["{}_dpt_pseudotime".format(
-                alignment)][[i for i, _ in path]].values
+            pseudotime = data1[ordered_cells1, :].obs[col_pseudotime][[i for i, _ in path]].values
 
         data1_expression_level = expression1[[i for i, _ in path]]
         data2_expression_level = expression2[[j for _, j in path]]

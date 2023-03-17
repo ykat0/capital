@@ -1,5 +1,10 @@
 # Changelog
 
+## Ver. 1.1.0 (2023-03-17)
+* Add `pseudotime` parameter to `cp.tl.dtw()`, `cp.tl.genes_similarity_score()`, and `cp.pl` that enable to use user defined pseudotime in dynamic time warping.
+* `cp.tl.trajectory_tree()` now allows user-preprocessed dataset.
+* Fix minor bugs
+
 ## Ver. 1.0.14 (2022-12-16)
 * Specify the matplotlib version as 3.5.2 due to errors in plotting figures
 
@@ -18,7 +23,7 @@
 * Fix minor bugs
 
 ## Ver. 1.0.9 (2022-07-05)
-* Updated capital.tl.dtw()
+* Updated `capital.tl.dtw()`
 * Fix minor bugs
 
 ## Ver. 1.0.8 (2022-06-28)

@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import scanpy as sc
 from scipy.spatial.distance import pdist, squareform
 from tslearn.metrics import dtw_path, dtw
@@ -63,6 +64,12 @@ class DPT:
         sc.pp.neighbors(adata_dpt)
         sc.tl.diffmap(adata_dpt)
         sc.tl.dpt(adata_dpt)
+
+        if adata_dpt.obs["dpt_pseudotime"].isin([np.nan, np.inf, -np.inf]).any():
+            raise ValueError(
+                f"Nan or inf raised in calculation of pseudotime of {alignment_id}."/
+                "Check the clusters in the alignment or try passing user calculated pseudotime to cp.tl.dtw()"
+            )
 
         adata.obs["{}_dpt_pseudotime".format(
             alignment_id)] = adata_dpt.obs["dpt_pseudotime"]
@@ -155,7 +162,8 @@ class DynamicTimeWarping():
         aligned_data: CapitalData,
         gene,
         alignment=None,
-        multi_genes=False
+        multi_genes=False,
+        pseudotime=None
     ):
         groupby1 = aligned_data.adata1.uns["capital"]["tree"]["annotation"]
         groupby2 = aligned_data.adata2.uns["capital"]["tree"]["annotation"]
@@ -183,20 +191,25 @@ class DynamicTimeWarping():
             raise ValueError("gene must be list, str or np.ndarray.")
 
         for alignment_id in alignment_id_list:
+            if pseudotime is None:
+                col_pseudotime = f"{alignment_id}_dpt_pseudotime"
+            else:
+                col_pseudotime = pseudotime
+
             cluster_list1 = aligned_data.alignmentdict[alignment_id]["data1"]
             cluster_list2 = aligned_data.alignmentdict[alignment_id]["data2"]
 
             adata_dpt1 = aligned_data.adata1[aligned_data.adata1.obs[groupby1].isin(
                 cluster_list1)].copy()
             adata_dpt1 = adata_dpt1[adata_dpt1.obs.sort_values(
-                "{}_dpt_pseudotime".format(alignment_id)).index].copy()
+                col_pseudotime).index].copy()
             adata_dpt2 = aligned_data.adata2[aligned_data.adata2.obs[groupby2].isin(
                 cluster_list2)].copy()
             adata_dpt2 = adata_dpt2[adata_dpt2.obs.sort_values(
-                "{}_dpt_pseudotime".format(alignment_id)).index].copy()
+               col_pseudotime).index].copy()
 
             if multi_genes:
-                ordered_cells1, ordered_cells2, path, dist = self._applying_dtw_to_clusters(
+                ordered_cells1, ordered_cells2, path, _ = self._applying_dtw_to_clusters(
                     adata_dpt1, adata_dpt2, gene)
                 result = aligned_data.alignmentdict[alignment_id]
                 result["multi_genes"] = {"ordered_cells1": ordered_cells1,
@@ -205,7 +218,7 @@ class DynamicTimeWarping():
                                     }
             else:
                 for genename in genenamelist:
-                    ordered_cells1, ordered_cells2, path, dist = self._applying_dtw_to_clusters(
+                    ordered_cells1, ordered_cells2, path, _ = self._applying_dtw_to_clusters(
                         adata_dpt1, adata_dpt2, genename)
                     result = aligned_data.alignmentdict[alignment_id]
                     result[genename] = {"ordered_cells1": ordered_cells1,
@@ -231,8 +244,23 @@ class DynamicTimeWarping():
         min_percentile_outlier=0,
         max_percentile_outlier=100
     ):
-        expression1 = adata1.raw.to_adata()[:, genename].X
-        expression2 = adata2.raw.to_adata()[:, genename].X
+        adata1_raw = adata1.raw.to_adata()
+        adata2_raw = adata2.raw.to_adata()
+
+        if ~pd.Series(genename).isin(adata1_raw.var.index).all():
+            ls = list(pd.Series(genename)[~pd.Series(genename).isin(adata1_raw.var.index)])
+            raise ValueError(
+                f"Genes {ls} do not exist in adata1.raw"
+            )
+        
+        if ~pd.Series(genename).isin(adata2_raw.var.index).all():
+            ls = list(pd.Series(genename)[~pd.Series(genename).isin(adata2_raw.var.index)])
+            raise ValueError(
+                f"Genes {ls} do not exist in adata2.raw"
+            )
+        
+        expression1 = adata1_raw[:, genename].X
+        expression2 = adata2_raw[:, genename].X
 
         if not isinstance(expression1, np.ndarray):
             expression1 = expression1.toarray()
@@ -269,6 +297,29 @@ class DynamicTimeWarping():
             gene_expression2 = expression2
             ordered_cells2 = np.array(adata2.obs_names.to_list())
 
+
+        if np.isin([np.nan, np.inf, -np.inf], gene_expression1).any():
+            raise ValueError(
+                "adata1.X includes nan or inf."
+            )
+
+        if np.isin([np.nan, np.inf, -np.inf], gene_expression2).any():
+            raise ValueError(
+                "adata2.X includes nan or inf."
+            )
+        
+        if len(gene_expression1) <= 10:
+            num1 = len(gene_expression1)
+            raise ValueError(
+                f"Number of cells in adata1 is {num1}, too little to calculate dynamic time warping. Check the chosen alignment or try different alignment."
+            )
+        
+        if len(gene_expression2) <= 10:
+            num2 = len(gene_expression2)
+            raise ValueError(
+                f"Number of cells in adata2 is {num2}, too little to calculate dynamic time warping. Check the chosen alignment or try different alignment."
+            )
+
         path, dist = dtw_path(
             gene_expression1, gene_expression2)
 
@@ -280,6 +331,7 @@ class DynamicTimeWarping():
         gene=None,
         alignment=None,
         min_disp=1.0,
+        pseudotime=None
     ):
 
         groupby1 = aligned_data.adata1.uns["capital"]["tree"]["annotation"]
@@ -316,18 +368,23 @@ class DynamicTimeWarping():
             dic_similarity_score = aligned_data.similarity_score
 
         for alignment_id in alignment_id_list:
+            if pseudotime is None:
+                col_pseudotime = f"{alignment_id}_dpt_pseudotime"
+            else:
+                col_pseudotime = pseudotime
+
             cluster_list1 = aligned_data.alignmentdict[alignment_id]["data1"]
             cluster_list2 = aligned_data.alignmentdict[alignment_id]["data2"]
 
             adata_dpt1 = aligned_data.adata1[aligned_data.adata1.obs[groupby1].isin(
                 cluster_list1)].copy()
             adata_dpt1 = adata_dpt1[adata_dpt1.obs.sort_values(
-                "{}_dpt_pseudotime".format(alignment_id)).index].raw.to_adata()
+                col_pseudotime).index].copy()
             adata_dpt2 = aligned_data.adata2[aligned_data.adata2.obs[groupby2].isin(
                 cluster_list2)].copy()
             adata_dpt2 = adata_dpt2[adata_dpt2.obs.sort_values(
-                "{}_dpt_pseudotime".format(alignment_id)).index].raw.to_adata()
-
+               col_pseudotime).index].copy()
+            
             if gene is None:
                 sc.pp.highly_variable_genes(adata_dpt1)
                 sc.pp.highly_variable_genes(adata_dpt2)

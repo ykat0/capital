@@ -162,6 +162,9 @@ def trajectory_tree(
     if not is_categorical_dtype(adata.obs[groupby]):
         adata.obs[groupby] = adata.obs[groupby].astype('category')
 
+    if adata.raw is None:
+        adata.raw = adata
+
     pp = Preprocessing()
     pp.trajectory_tree(
         adata,
@@ -307,6 +310,11 @@ def tree_alignment(
         adata1.raw = adata1
         adata2.raw = adata2
 
+    if adata1.raw is None:
+        adata1.raw = adata1
+    if adata2.raw is None:
+        adata2.raw = adata2
+
     print("Calculating tree alignment")
     tree_align = Tree_Alignment()
     aligned_data = tree_align.tree_alignment(
@@ -367,6 +375,7 @@ def dtw(
     gene: Union[str, list, np.ndarray],
     alignment: Union[str, list, None] = None,
     multi_genes=False,
+    pseudotime : str =None
 ):
     """\
     Calculate dynamic time warping for genes.
@@ -385,8 +394,10 @@ def dtw(
     multi_genes : bool
         If True, compute dynamic time warping using all genes in argument gene and 
         return matched cells in cdata.alignmnetdict['alignmentid']['multi_genes'].
-        If False, compute dynamic time warping for each gene. By defalut False.  
-
+        If False, compute dynamic time warping for each gene. By default False.  
+    pseudotime : str
+        Specify name of the column which store user defined pseudotime in cdata.adata1.obs and cdata.adata2.obs. 
+        If `None`, it calculates dynamic time warping using pseudotime calculated in cp.tl.dpt().  By default `None`.
     """
 
     if not isinstance(aligned_data, CapitalData):
@@ -402,7 +413,8 @@ def dtw(
         aligned_data,
         gene,
         alignment=alignment,
-        multi_genes=multi_genes
+        multi_genes=multi_genes,
+        pseudotime=pseudotime
     )
 
 
@@ -411,6 +423,7 @@ def genes_similarity_score(
     gene: Union[str, list, np.ndarray, None] = None,
     alignment: Union[str, list, None] = None,
     min_disp: float = 2.0,
+    pseudotime=None
 ):
     """\
     Calculate similarity scores using dynamic time warping `[H.Sakoe78] <https://ieeexplore.ieee.org/document/1163055>`_.
@@ -432,6 +445,9 @@ def genes_similarity_score(
     min_disp : float
         If `gene` is `None`, the union of genes that have bigger dispersion than min_disp
         in the clusters of the alignment is used, by default 2.0.
+    pseudotime : str
+        Specify name of the column which store user defined pseudotime in cdata.adata1.obs and cdata.adata2.obs. 
+        If `None`, it calculates dynamic time warping using pseudotime calculated in cp.tl.dpt().  By default `None`.
     """
     if not isinstance(aligned_data, CapitalData):
         raise ValueError(
@@ -443,6 +459,7 @@ def genes_similarity_score(
         gene=gene,
         alignment=alignment,
         min_disp=min_disp,
+        pseudotime=pseudotime
     )
 
 
