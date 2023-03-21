@@ -1,5 +1,8 @@
 # Changelog
 
+## Ver. 1.1.2 (2023-03-22)
+* Fix minor bugs
+
 ## Ver. 1.1.1 (2023-03-22)
 * Added new tutorial `Use user defined pseudotime`
 * Fix minor bugs
