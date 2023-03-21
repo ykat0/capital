@@ -1,5 +1,9 @@
 # Changelog
 
+## Ver. 1.1.1 (2023-03-22)
+* Added new tutorial `Use user defined pseudotime`
+* Fix minor bugs
+
 ## Ver. 1.1.0 (2023-03-17)
 * Add `pseudotime` parameter to `cp.tl.dtw()`, `cp.tl.genes_similarity_score()`, and `cp.pl` that enable to use user defined pseudotime in dynamic time warping.
 * `cp.tl.trajectory_tree()` now allows user-preprocessed dataset.

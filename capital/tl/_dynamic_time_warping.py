@@ -311,13 +311,13 @@ class DynamicTimeWarping():
         if len(gene_expression1) <= 10:
             num1 = len(gene_expression1)
             raise ValueError(
-                f"Number of cells in adata1 is {num1}, too little to calculate dynamic time warping. Check the chosen alignment or try different alignment."
+                f"Number of cells in adata1 is {num1}, too small to calculate dynamic time warping. Check the chosen alignment or try different alignment."
             )
         
         if len(gene_expression2) <= 10:
             num2 = len(gene_expression2)
             raise ValueError(
-                f"Number of cells in adata2 is {num2}, too little to calculate dynamic time warping. Check the chosen alignment or try different alignment."
+                f"Number of cells in adata2 is {num2}, too small to calculate dynamic time warping. Check the chosen alignment or try different alignment."
             )
 
         path, dist = dtw_path(
