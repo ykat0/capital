@@ -8,5 +8,4 @@ build:
 python:
   install:
     - requirements: ./docs/requirements.txt
-    - requirements: ./docs/requirements_sphinx.txt
   system_packages: true
