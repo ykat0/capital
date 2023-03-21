@@ -5,3 +5,4 @@ Tutorials
 
    capital_tutorial
    capital_tutorial_adding_annotations_trajectory_tree
+   capital_tutorial_adding_pseudotime
