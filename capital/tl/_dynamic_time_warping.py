@@ -163,7 +163,7 @@ class DynamicTimeWarping():
         gene,
         alignment=None,
         multi_genes=False,
-        pseudotime=None
+        col_pseudotime=None
     ):
         groupby1 = aligned_data.adata1.uns["capital"]["tree"]["annotation"]
         groupby2 = aligned_data.adata2.uns["capital"]["tree"]["annotation"]
@@ -191,10 +191,10 @@ class DynamicTimeWarping():
             raise ValueError("gene must be list, str or np.ndarray.")
 
         for alignment_id in alignment_id_list:
-            if pseudotime is None:
-                col_pseudotime = f"{alignment_id}_dpt_pseudotime"
+            if col_pseudotime is None:
+                col_pseudotime_tmp = f"{alignment_id}_dpt_pseudotime"
             else:
-                col_pseudotime = pseudotime
+                col_pseudotime_tmp = col_pseudotime
 
             cluster_list1 = aligned_data.alignmentdict[alignment_id]["data1"]
             cluster_list2 = aligned_data.alignmentdict[alignment_id]["data2"]
@@ -202,11 +202,11 @@ class DynamicTimeWarping():
             adata_dpt1 = aligned_data.adata1[aligned_data.adata1.obs[groupby1].isin(
                 cluster_list1)].copy()
             adata_dpt1 = adata_dpt1[adata_dpt1.obs.sort_values(
-                col_pseudotime).index].copy()
+                col_pseudotime_tmp).index].copy()
             adata_dpt2 = aligned_data.adata2[aligned_data.adata2.obs[groupby2].isin(
                 cluster_list2)].copy()
             adata_dpt2 = adata_dpt2[adata_dpt2.obs.sort_values(
-               col_pseudotime).index].copy()
+               col_pseudotime_tmp).index].copy()
 
             if multi_genes:
                 ordered_cells1, ordered_cells2, path, _ = self._applying_dtw_to_clusters(

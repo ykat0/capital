@@ -375,7 +375,7 @@ def dtw(
     gene: Union[str, list, np.ndarray],
     alignment: Union[str, list, None] = None,
     multi_genes=False,
-    pseudotime : str =None
+    col_pseudotime : str =None
 ):
     """\
     Calculate dynamic time warping for genes.
@@ -395,7 +395,7 @@ def dtw(
         If True, compute dynamic time warping using all genes in argument gene and 
         return matched cells in cdata.alignmnetdict['alignmentid']['multi_genes'].
         If False, compute dynamic time warping for each gene. By default False.  
-    pseudotime : str
+    col_pseudotime : str
         Specify name of the column which store user defined pseudotime in cdata.adata1.obs and cdata.adata2.obs. 
         If `None`, it calculates dynamic time warping using pseudotime calculated in cp.tl.dpt().  By default `None`.
     """
@@ -414,7 +414,7 @@ def dtw(
         gene,
         alignment=alignment,
         multi_genes=multi_genes,
-        pseudotime=pseudotime
+        col_pseudotime=col_pseudotime
     )
 
 
