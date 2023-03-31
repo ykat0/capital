@@ -6,7 +6,7 @@
 
 ## Alignment of single-cell trajectory trees
 
-Last updated: 2022-03-22
+Last updated: 2023-03-22
 
 We present CAPITAL, a computational method for comparing pseudotime trajectories with tree alignment whereby trajectories including branches can be automatically compared.
 
@@ -31,7 +31,7 @@ We present CAPITAL, a computational method for comparing pseudotime trajectories
 * scprep
 * tslearn
 
-### Install on Linux, Windows (WSL) and macOS
+### Install on Linux, Windows (WSL), and macOS
 Create a new environment for CAPITAL (recommended):
 ```
 conda create -n capital python=3.9 graphviz
@@ -45,13 +45,13 @@ pip install capital
 ```
 
 ## Usage
-Read the [documentation](https://capital.readthedocs.io/en/latest/). CAPITAL uses a single-cell analysis toolkit [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) in its implementation so that one can also use Scanpy's useful functions including preprocessing, plotting and datasets in the CAPITAL environment.
+Read the [documentation](https://capital.readthedocs.io/en/latest/). CAPITAL uses a single-cell analysis toolkit [Scanpy](https://scanpy.readthedocs.io/en/latest/index.html) in its implementation so that one can also use Scanpy's useful functions including preprocessing, plotting, and datasets in the CAPITAL environment.
 
 ## Code Ocean
 We also provide a Code Ocean [compute capsule](https://codeocean.com/capsule/5673663/tree/v1) to reproduce our results.
 
 ## Reference
-Reiichi Sugihara, Yuki Kato, Tomoya Mori and Yukio Kawahara,
+Reiichi Sugihara, Yuki Kato, Tomoya Mori, and Yukio Kawahara,
 **Alignment of single-cell trajectory trees with CAPITAL**,
 *Nature Communications*, vol. 13, 5972, 2022. [[Link]](https://www.nature.com/articles/s41467-022-33681-3)
 
