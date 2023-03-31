@@ -4,12 +4,12 @@
 * Fix minor bugs
 
 ## Ver. 1.1.1 (2023-03-22)
-* Added new tutorial `Use user defined pseudotime`
+* Add a new tutorial `Use user defined pseudotime`
 * Fix minor bugs
 
 ## Ver. 1.1.0 (2023-03-17)
-* Add `pseudotime` parameter to `cp.tl.dtw()`, `cp.tl.genes_similarity_score()`, and `cp.pl` that enable to use user defined pseudotime in dynamic time warping.
-* `cp.tl.trajectory_tree()` now allows user-preprocessed dataset.
+* Add a `pseudotime` parameter to `cp.tl.dtw()`, `cp.tl.genes_similarity_score()`, and `cp.pl` that enable users to use user-defined pseudotime in dynamic time warping
+* `cp.tl.trajectory_tree()` now accepts a user-preprocessed dataset
 * Fix minor bugs
 
 ## Ver. 1.0.14 (2022-12-16)
@@ -19,11 +19,11 @@
 * Fix minor bugs
 
 ## Ver. 1.0.12 (2022-07-23)
-* Add `multi_gene` parameter to capital.pl.gene_expression_trend() so that users can plot a gene expression trend using results of multi genes calculated in capital.tl.dtw()
+* Add `multi_gene` parameter to `capital.pl.gene_expression_trend()` so that users can plot a gene expression trend using results of multi genes calculated in `capital.tl.dtw()`
 * Fix minor bugs
 
 ## Ver. 1.0.11 (2022-07-14)
-* Change function cp.tl.dpt() to calculate the root cell so that it is derived from all cells in the datasets and used for all linear alignments
+* Change function `cp.tl.dpt()` to calculate the root cell so that it is derived from all cells in the datasets and used for all linear alignments
 * Fix minor bugs
 
 ## Ver. 1.0.10 (2022-07-05)
@@ -45,7 +45,7 @@
 
 ## Ver. 1.0.5 (2022-05-14)
 * Fix minor bugs
-* Delete synthetic_dataset1 and synthetic_dataset2 from capital.dataset function
+* Delete synthetic_dataset1 and synthetic_dataset2 from `capital.dataset` function
 
 ## Ver. 1.0.4 (2021-12-03)
 * Add some new arguments in plotting
